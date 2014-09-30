@@ -1,13 +1,13 @@
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/'horarios' /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`horarios` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 
-USE 'horarios';
+USE `horario`;
 
-/*Table structure for table 'horarios' */
+/*Table structure for table `horarios` */
 
-CREATE TABLE 'horarios' (
-  'Id' int(11) NOT NULL AUTO_INCREMENT,
-  'Nombre' varchar(50) NOT NULL,
+CREATE TABLE `horarios` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(50) NOT NULL,
   `Apellido` varchar(50) NOT NULL,
   `fecha_nac` date NOT NULL,
   `peso` double NOT NULL,
