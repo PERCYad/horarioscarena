@@ -1,7 +1,7 @@
 
 /*CREATE DATABASE /*!32312 IF NOT EXISTS*/`carreras` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 
-USE `horarios;
+USE `horarios`;
 
 /*Table structure for table `carreras` */
 
