@@ -77,6 +77,7 @@ class horario
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
 	
 	}
+
 	private function insertHorario()	// inserta el horario cargado en los atributos
 	{
 			$obj_horario=new sQuery();
@@ -86,6 +87,7 @@ class horario
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
 	
 	}	
+	
 	function delete()	// elimina el horario
 	{
 			$obj_horario=new sQuery();
