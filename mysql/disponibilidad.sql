@@ -1,6 +1,4 @@
 
-
-
 USE `horarios`;
 
 /*Table structure for table `horarios` */
