@@ -11,8 +11,8 @@ if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
 
-$view= new stdClass(); // creo una clase standard para contener la vista
-$view->disableLayout=false;// marca si usa o no el layout , si no lo usa imprime directamente el template
+$view = new stdClass(); // creo una clase standard para contener la vista
+$view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
@@ -31,35 +31,41 @@ switch ($action)
     case 'saveClient':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
-        $id=intval($_POST['id']);
-        $nombre=cleanString($_POST['nombre']);
-        $apellido=cleanString($_POST['apellido']);
-        $fecha=cleanString($_POST['fecha']);
-        $peso=cleanString($_POST['peso']);
-        $horario=new Horario($id);
-        $horario->setNombre($nombre);
-        $horario->setApellido($apellido);
-        $horario->setFecha($fecha);
-        $horario->setPeso($peso);
+        $Id=intval($_POST['Id']);
+        $IdCarrera=cleanString($_POST['IdCarrera']);
+        $IdDia=cleanString($_POST['IdDia']);
+        $IdAsignatura=cleanString($_POST['IdAsignatura']);
+        $IdModulo=cleanString($_POST['IdModulo']);
+        $IdInicio=cleanString($_POST['IdInicio']);
+        $IdFin=cleanString($_POST['IdFin']);
+		
+        $Id=new Horario($Id);
+        $horario->setIdCarrera($IdCarrera);
+        $horario->setIdDia($IdDia);
+        $horario->setIdAsignatura($IdAsignatura);
+        $horario->setIdModulo($IdModulo);
+        $horario->setInicio($IdInicio);
+        $horario->setFin($IdFin);
+
         $horario->save();
         break;
     case 'newClient':
-        $view->client=new Horario();
+        $view->Horarios=new Horario();
         $view->label='Nuevo Horario';
         $view->disableLayout=true;
         $view->contentTemplate="templates/horarioForm.php"; // seteo el template que se va a mostrar
         break;
     case 'editClient':
-        $editId=intval($_POST['id']);
+        $editId=intval($_POST['Id']);
         $view->label='Editar Horario';
-        $view->client=new Horario($editId);
+        $view->Horarios=new Horario($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/horarioForm.php"; // seteo el template que se va a mostrar
         break;
     case 'deleteClient':
-        $id=intval($_POST['id']);
-        $client=new Horario($id);
-        $client->delete();
+        $Id=intval($_POST['Id']);
+        $horario=new Horario($Id);
+        $horario->delete();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;
     default :
