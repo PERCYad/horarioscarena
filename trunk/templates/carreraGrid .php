@@ -9,13 +9,13 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($view->carrera as $carrera):  // uso la otra sintaxis de php para templates ?>
+        <?php foreach ($view->carreras as $carreras):  // uso la otra sintaxis de php para templates ?>
             <tr>
-                <td><?php echo $carrera['Id'];?></td>
-                <td><?php echo $carrera['Nombre'];?></td>
-                <td><?php echo $carrera['Anio'];?></td>
-                <td><a class="edit" href="javascript:void(0);" data-id="<?php echo $carrera['Id'];?>">Editar</a></td>
-                <td><a class="delete" href="javascript:void(0);" data-id="<?php echo $carrera['Id'];?>">Borrar</a></td>
+                <td><?php echo $carreras['Id'];?></td>
+                <td><?php echo $carreras['Nombre'];?></td>
+                <td><?php echo $carreras['Anio'];?></td>
+                <td><a class="edit" href="javascript:void(0);" data-id="<?php echo $carreras['Id'];?>">Editar</a></td>
+                <td><a class="delete" href="javascript:void(0);" data-id="<?php echo $carreras['Id'];?>">Borrar</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
