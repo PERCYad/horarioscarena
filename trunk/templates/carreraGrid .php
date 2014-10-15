@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($view->carreras as $carreras):  // uso la otra sintaxis de php para templates ?>
+        <?php foreach ($view->carreras as $carreras):  ?>
             <tr>
                 <td><?php echo $carreras['Id'];?></td>
                 <td><?php echo $carreras['Nombre'];?></td>
