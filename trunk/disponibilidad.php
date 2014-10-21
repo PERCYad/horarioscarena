@@ -23,7 +23,7 @@ switch ($action)
         $view->disponibilidad=disponibilidad::getdisponibilidad();
         $view->contentTemplate="templates/disponibilidadGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'saveDisponibilidad':
+    case 'save Disponibilidad':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
