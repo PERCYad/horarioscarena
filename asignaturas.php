@@ -14,9 +14,9 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'index':
+    case 'asignatura':
         $view->asignaturas=Asignatura::getAsignaturas(); // trae todos los asignatura
-        $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
+        $view->contentTemplate="templates/asignaturaGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refreshGrid':
         $view->disableLayout=true; // no usa el layout
