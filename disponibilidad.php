@@ -14,7 +14,7 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'index':
+    case 'disponibilidad':
         $view->disponibilidad=disponibilidad::getdisponibilidad(); // trae todos los horarios
         $view->contentTemplate="templates/disponibilidadGrid.php"; // seteo el template que se va a mostrar
         break;
