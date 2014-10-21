@@ -2,7 +2,7 @@
 //GRUPO PRETTO - TESTA - RODRIGUEZ
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/docente.php");
-$action='horarios';
+$action='docente';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
@@ -15,8 +15,8 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'horarios':
-        $view->docentes=Docente::getdocentes(); // trae todos los horarios
+    case 'docente':
+        $view->docente=docente::getdocente(); // trae todos los horarios
         $view->contentTemplate="templates/docentesGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refreshGrid':
@@ -24,7 +24,7 @@ switch ($action)
         $view->docentes=Horario::getDocentes();
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'saveClient':
+    case 'saveDocente':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
@@ -45,20 +45,20 @@ switch ($action)
 
         $docente->save();
         break;
-    case 'newClient':
+    case 'newDocente':
         $view->Horarios=new Docente();
         $view->label='Nuevo Docente';
         $view->disableLayout=true;
         $view->contentTemplate="templates/docenteForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'editClient':
+    case 'editDocente':
         $editId=intval($_POST['Id']);
         $view->label='Editar Docente';
         $view->Docente=new Docente($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/docenteForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'deleteClient':
+    case 'deleteDocente':
         $Id=intval($_POST['Id']);
         $docente=new Docente($Id);
         $docente->delete();

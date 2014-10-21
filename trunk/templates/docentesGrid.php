@@ -4,7 +4,8 @@
             <th>Id</th>
             <th>Apellidos</th>
             <th>Nombres</th>
-            <th>Correo</th>
+            <th>Dia</th>
+			<th>Asignatura</th>
             <th>Inicio</th>
             <th>Fin</th>
             <th>Editar</th>
@@ -12,20 +13,21 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($view->horarios as $horario):  // uso la otra sintaxis de php para templates ?>
+        <?php foreach ($view->docente as $docente):  // uso la otra sintaxis de php para templates ?>
             <tr>
-                <td><?php echo $horario['Id'];?></td>
-                <td><?php echo $horario['Apellidos'];?></td>
-                <td><?php echo $horario['Nombres'];?></td>
-                <td><?php echo $horario['Correo'];?></td>
-                <td><?php echo $horario['Inicio'];?></td>
-                <td><?php echo $horario['Fin'];?></td>
-                <td><a class="edit" href="javascript:void(0);" data-id="<?php echo $horario['Id'];?>">Editar</a></td>
-                <td><a class="delete" href="javascript:void(0);" data-id="<?php echo $horario['Id'];?>">Borrar</a></td>
+                <td><?php echo $docente['Id'];?></td>
+                <td><?php echo $docente['Apellidos'];?></td>
+                <td><?php echo $docente['Nombres'];?></td>
+                <td><?php echo $docente['Dia'];?></td>
+				<td><?php echo $docente['Asignatura'];?></td>
+                <td><?php echo $docente['Inicio'];?></td>
+                <td><?php echo $docente['Fin'];?></td>
+                <td><a class="edit" href="javascript:void(0);" data-id="<?php echo $docente['Id'];?>">Editar</a></td>
+                <td><a class="delete" href="javascript:void(0);" data-id="<?php echo $docente['Id'];?>">Borrar</a></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
 </table>
 <!--div class="bar"-->
-    <a id="new" class="button" href="javascript:void(0);">Nuevo Horario</a><br><br>
+    <a id="new" class="button" href="javascript:void(0);">Nuevo Docente</a><br><br>
 <!--/div-->
