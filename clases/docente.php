@@ -4,10 +4,12 @@ class docente
 	var $Id;     //se declaran los atributos de la clase, que son los atributos del horario
 	var $Apellidos;
 	var $Nombres;
+	var $Dia;
+	var $Asignatura;
 	Var $Inicio;
 	Var $Fin;
 
-    public static function getdocentes() 
+    public static function getdocente() 
 		{
 			$obj_docente=new sQuery();
 			$obj_docente->executeQuery("select * from docentes"); // ejecuta la consulta para traer al horario
