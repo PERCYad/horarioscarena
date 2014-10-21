@@ -1,7 +1,7 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/horario.php");
-$action='index';
+$action='horarios';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
