@@ -1,5 +1,5 @@
 <?php
-class horario
+class Horario
 {
 	var $IdCarrera;     //se declaran los atributos de la clase, que son los atributos del horario
 	var $IdDia;
