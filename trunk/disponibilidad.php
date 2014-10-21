@@ -40,7 +40,7 @@ switch ($action)
 
         $disponibilidad->save();
         break;
-    case 'newdisponibilidad':
+    case 'new disponibilidad':
         $view->disponibilidad=new disponibilidad();
         $view->label='Nueva disponibilidad';
         $view->disableLayout=true;
@@ -53,7 +53,7 @@ switch ($action)
         $view->disableLayout=true;
         $view->contentTemplate="templates/disponibilidadForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'deletedisponibilidad':
+    case 'delete disponibilidad':
         $Id=intval($_POST['Id']);
         $disponibilidad=new disponibilidad($Id);
         $disponibilidad->delete();
