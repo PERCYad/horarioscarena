@@ -1,9 +1,4 @@
 ﻿<?php
-/**
- * Autor: Lucas Forchino
- * Web: http://www.tutorialjquery.com
- *
- */
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/horario.php");
 $action='index';
