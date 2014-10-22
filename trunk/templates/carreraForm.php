@@ -1,6 +1,6 @@
 ﻿<h2><?php echo $view->label ?></h2>
 
-<form name ="carreras" id="carreras" method="POST" action="index.php">
+<form name ="carrera" id="carrera" method="POST" action="carreras.php">
    
    <input type="hidden" name="id" id="id" value="<?php print $view->carreras->getId() ?>">
     <div>
