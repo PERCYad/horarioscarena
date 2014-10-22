@@ -1,4 +1,4 @@
-﻿<h2><?php echo $view->label ?></h2>
+﻿<h2><?php echo $view->table ?></h2>
 <form name ="disponibilidad" id="disponibilidades" method="POST" action="disponibilidades.php">
     <input type="hidden" name="Id" id="id" value="<?php print $view->disponibilidad->getId() ?>">
     <div>
