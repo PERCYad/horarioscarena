@@ -13,7 +13,7 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($view->horarios as $horario):  // uso la otra sintaxis de php para templates ?>
+        <?php foreach ($view->horario as $horario):  // uso la otra sintaxis de php para templates ?>
             <tr>
                 <td><?php echo $horario['Id'];?></td>
                 <td><?php echo $horario['IdCarrera'];?></td>
