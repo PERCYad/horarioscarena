@@ -1,6 +1,6 @@
 ﻿<h2><?php echo $view->label ?></h2>
 <form name ="asignatura" id="asignatura" method="POST" action="index.php">
-    <input type="hidden" name="id" id="id" value="<?php print $view->asignatura->getId() ?>">
+    <input type="hidden" name="Id" id="Id" value="<?php print $view->asignatura->getId() ?>">
     <div>
         <label>Id</label>
         <input type="text" name="Idasignatura" id="Idasignatura" value = "<?php print $view->asignatura->getId() ?>">
@@ -11,7 +11,7 @@
     </div>
     <div>
         <label>Anio</label>
-        <input type="text" name="Anio" id="IdAsignatura" value = "<?php print $view->asignatura->getIdAnio() ?>">
+        <input type="text" name="Anio" id="IdAsignatura" value = "<?php print $view->asignatura->getAnio() ?>">
     </div>
 	 <div>
         <label>IdAsignatura</label>
@@ -19,7 +19,7 @@
     </div
     <div>
         <label>Modulo</label>
-        <input type="text" name="Modulo" id="Modulo" value = "<?php print $view->asignatura->getModulo() ?>">
+        <input type="text" name="Modulo" id="Modulos" value = "<?php print $view->asignatura->getModulos() ?>">
     </div>
     <div>
         <label>Asignados</label>
@@ -27,7 +27,7 @@
     </div>
     <div>
         <label>IdDocente</label>
-        <input type="text" name="IdDocente" id="IdDocente" value = "<?php print $view->asignatura->getDocente() ?>">
+        <input type="text" name="IdDocente" id="IdDocente" value = "<?php print $view->asignatura->getIdDocente() ?>">
     </div>
     <div class="buttonsBar">
         <input id="cancel" type="button" value ="Cancelar" />
