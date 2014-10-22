@@ -1,7 +1,7 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
-include_once ("clases/asignaturas.php");
-$action='asignatura';
+include_once ("clases/asignatura.php");
+$action='asignaturas';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
@@ -14,50 +14,51 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'asignatura':
-        $view->asignaturas=Asignatura::getAsignaturas(); // trae todos los asignatura
-        $view->contentTemplate="templates/asignaturaGrid.php"; // seteo el template que se va a mostrar
+    case 'asignaturas':
+	$view->tabla="asignaturas";
+        $view->asignatura=Asignatura::getAsignaturas(); // trae todos los asignatura
+        $view->contentTemplate="templates/asignaturasGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'refreshGrid':
+    case 'refrescarGrilla':
         $view->disableLayout=true; // no usa el layout
         $view->asignatura=Asignatura::getAsignaturas();
         $view->contentTemplate="templates/AsignaturasGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'saveClient':
+    case 'grabar':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
         $IdCarrera=cleanString($_POST['IdCarrera']);
-        $Anio=cleanString($_POST['IdDia']);
+        $Anio=cleanString($_POST['Anio']);
         $IdAsignatura=cleanString($_POST['IdAsignatura']);
-        $Modulo=cleanString($_POST['IdModulo']);
-        $Asignados=cleanString($_POST['IdInicio']);
-        $IdDocentes=cleanString($_POST['IdFin']);
+        $Modulos=cleanString($_POST['Modulos']);
+        $Asignados=cleanString($_POST['Asignados']);
+        $IdDocentes=cleanString($_POST['IdDocentes']);
 		
         $Id=new Asignatura($Id);
         $asignatura->setIdCarrera($IdCarrera);
-        $asignatura->setIdAnio($IdDia);
+        $asignatura->setIdAnio($Anio);
         $asignatura->setIdAsignatura($IdAsignatura);
-        $asignatura->setModulo($IdModulo);
-        $asignatura->setAsignados($IdInicio);
-        $asignatura->setIdDocente($IdFin);
+        $asignatura->setModulos($Modulos);
+        $asignatura->setAsignados($Asignados);
+        $asignatura->setIdDocente($IdDocentes);
 
         $asignatura->save();
         break;
-    case 'newClient':
+    case 'nuevo':
         $view->Asignaturas=new Aignatura();
         $view->label='Nuevo Asignatura';
         $view->disableLayout=true;
         $view->contentTemplate="templates/asignaturaForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'editClient':
+    case 'editar':
         $editId=intval($_POST['Id']);
         $view->label='Editar Asignatura';
         $view->Asignatura=new Asignatura($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/asignaturaForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'deleteClient':
+    case 'borrar':
         $Id=intval($_POST['Id']);
         $asignatura=new Asignatura($Id);
         $asignatura->delete();
