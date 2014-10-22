@@ -1,7 +1,9 @@
 <?php
 class Horario
 {
-	var $IdCarrera;     //se declaran los atributos de la clase, que son los atributos del horario
+	//se declaran los atributos de la clase, que son los atributos del horario
+	var $Id;
+	var $IdCarrera;
 	var $IdDia;
 	var $IdAsignatura;
 	Var $IdModulo;
@@ -50,8 +52,6 @@ class Horario
 	 { return $this->Fin;}
 	 
 		// metodos que setean los valores
-	function setIdCarrera($val)
-	 { $this->IdCarrera=$val;}
 	function setIdDia($val)
 	 {  $this->IdDia=$val;}
 	function setIdAsignatura($val)
