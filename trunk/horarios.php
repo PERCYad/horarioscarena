@@ -1,12 +1,12 @@
 ﻿<?php
 //GRUPO PRETTO - TESTA - RODRIGUEZ
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
-include_once ("clases/docente.php");
+include_once ("clases/horario.php");
 $action='horarios';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
-//cambiar horario por docente 
+
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
 
@@ -16,12 +16,12 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'horarios':
-        $view->docentes=Docente::getdocentes(); // trae todos los horarios
-        $view->contentTemplate="templates/docentesGrid.php"; // seteo el template que se va a mostrar
+        $view->horario=Horario::getHorarios(); // trae todos los horarios
+        $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refreshGrid':
         $view->disableLayout=true; // no usa el layout
-        $view->docentes=Horario::getDocentes();
+        $view->horario=Horario::getHorarios();
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'saveClient':
@@ -35,33 +35,33 @@ switch ($action)
         $IdInicio=cleanString($_POST['IdInicio']);
         $IdFin=cleanString($_POST['IdFin']);
 		
-        $Id=new Docente($Id);
-        $docente->setIdCarrera($IdCarrera);
-        $docente->setIdDia($IdDia);
-        $docente->setIdAsignatura($IdAsignatura);
-        $docente->setIdModulo($IdModulo);
-        $docente->setInicio($IdInicio);
-        $docente->setFin($IdFin);
+        $Id=new Horario($Id);
+        $Horario->setIdCarrera($IdCarrera);
+        $Horario->setIdDia($IdDia);
+        $Horario->setIdAsignatura($IdAsignatura);
+        $Horario->setIdModulo($IdModulo);
+        $Horario->setInicio($IdInicio);
+        $Horario->setFin($IdFin);
 
-        $docente->save();
+        $Horario->save();
         break;
     case 'newClient':
-        $view->Horarios=new Docente();
-        $view->label='Nuevo Docente';
+        $view->horario=new Horario();
+        $view->label='Nuevo Horario';
         $view->disableLayout=true;
-        $view->contentTemplate="templates/docenteForm.php"; // seteo el template que se va a mostrar
+        $view->contentTemplate="templates/horarioForm.php"; // seteo el template que se va a mostrar
         break;
     case 'editClient':
         $editId=intval($_POST['Id']);
-        $view->label='Editar Docente';
-        $view->Docente=new Docente($editId);
+        $view->label='Editar Horario';
+        $view->horario=new Horario($editId);
         $view->disableLayout=true;
-        $view->contentTemplate="templates/docenteForm.php"; // seteo el template que se va a mostrar
+        $view->contentTemplate="templates/horarioForm.php"; // seteo el template que se va a mostrar
         break;
     case 'deleteClient':
         $Id=intval($_POST['Id']);
-        $docente=new Docente($Id);
-        $docente->delete();
+        $horario=new Horario($Id);
+        $horario->delete();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;
     default :
