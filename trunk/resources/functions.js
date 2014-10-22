@@ -41,7 +41,8 @@
 
 
     $('#horario').live('submit',function(){
-        var params={};
+        alert("chupino");
+		var params={};
         params.action='grabar';
         params.id=$('#Id').val();
         params.nombre=$('#nombre').val();
