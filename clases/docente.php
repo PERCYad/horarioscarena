@@ -1,5 +1,5 @@
 <?php
-class docente
+class Docente
 {
 	var $Id;     //se declaran los atributos de la clase, que son los atributos del horario
 	var $Apellidos;
@@ -9,7 +9,7 @@ class docente
 	Var $Inicio;
 	Var $Fin;
 
-    public static function getdocente() 
+    public static function getDocente() 
 		{
 			$obj_docente=new sQuery();
 			$obj_docente->executeQuery("select * from docentes"); // ejecuta la consulta para traer al horario
@@ -17,7 +17,7 @@ class docente
 			return $obj_docente->fetchAll(); // retorna todos los docentes
 		}
 
-	function docente($nro=0) // declara el constructor, si trae el numero de horario lo busca , si no, trae todos los horarios
+	function Docente($nro=0) // declara el constructor, si trae el numero de horario lo busca , si no, trae todos los horarios
 	{
 		if ($nro!=0)
 		{
@@ -62,12 +62,12 @@ class docente
     function save()
     {
         if($this->Id)
-        {$this->updatedocente();}
+        {$this->updateDocente();}
         else
-        {$this->insertdocente();}
+        {$this->insertDocente();}
     }
 	
-	private function updatedocente()	// actualiza el horario cargado en los atributos
+	private function updateDocente()	// actualiza el horario cargado en los atributos
 	{
 			$obj_docente=new sQuery();
 			$query="update docentes set Apellidos='$this->Apellidos', IdDia='$this->IdDia', IdAsignatura='$this->IdAsignatura', Inicio='$this->Inicio', Fin='$this->Fin' where Id = $this->Id";
@@ -75,7 +75,7 @@ class docente
 			return $obj_docente->getAffect(); // retorna todos los registros afectados
 	
 	}
-	private function insertdocente()	// inserta el horario cargado en los atributos
+	private function insertDocente()	// inserta el horario cargado en los atributos
 	{
 			$obj_docente=new sQuery();
 			$query="insert into docentes( Apellidos, IdDia, IdAsignatura, Incio, Fin )values('$this->Apellidos', '$this->IdDia','$this->IdAsignatura','$this->Inicio','$this->Fin')";

@@ -7,23 +7,23 @@
     </div>
     <div>
         <label>Apellidos</label>
-        <input type="text" name="Apellidos" id="Apellidos"value = "<?php print $view->horario->getApellidos() ?>">
+        <input type="text" name="Apellidos" id="Apellidos"value = "<?php print $view->docente->getApellidos() ?>">
     </div>
     <div>
         <label>Nombres</label>
-        <input type="text" name="Nombres" id="Nombres" value = "<?php print $view->horario->getNombres() ?>">
+        <input type="text" name="Nombres" id="Nombres" value = "<?php print $view->docente->getNombres() ?>">
     </div>
     <div>
         <label>Correo</label>
-        <input type="text" name="Correo" id="Correo" value = "<?php print $view->horario->getCorreo() ?>">
+        <input type="text" name="Correo" id="Correo" value = "<?php print $view->docente->getCorreo() ?>">
     </div>
 	 <div>
         <label>Inicio</label>
-        <input type="text" name="Inicio" id="Inicio" value = "<?php print $view->horario->getInicio() ?>">
+        <input type="text" name="Inicio" id="Inicio" value = "<?php print $view->docente->getInicio() ?>">
     </div>
     <div>
         <label>Fin</label>
-        <input type="text" name="Fin" id="Fin" value = "<?php print $view->horario->getFin() ?>">
+        <input type="text" name="Fin" id="Fin" value = "<?php print $view->docente->getFin() ?>">
     </div>
    
     <div class="buttonsBar">
