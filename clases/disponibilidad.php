@@ -1,5 +1,5 @@
 <?php
-class disponibilidad
+class D
 {
 	var $Id;     //se declaran los atributos de la clase, que son los atributos del horario
 	var $IdDia;
@@ -7,7 +7,7 @@ class disponibilidad
 	Var $Inicio;
 	Var $Fin;
 
-    public static function getdisponibilidad() 
+    public static function getDisponibilidad() 
 		{
 			$obj_disponibilidad=new sQuery();
 			$obj_disponibilidad->executeQuery("select * from disponibilidad"); // ejecuta la consulta para traer al horario
@@ -15,7 +15,7 @@ class disponibilidad
 			return $obj_disponibilidad->fetchAll(); // retorna todos los horarios
 		}
 
-	function disponibilidad($nro=0) // declara el constructor, si trae el numero de horario lo busca , si no, trae todos los horarios
+	function Disponibilidad($nro=0) // declara el constructor, si trae el numero de horario lo busca , si no, trae todos los horarios
 	{
 		if ($nro!=0)
 		{

@@ -23,7 +23,7 @@ switch ($action)
         $view->disponibilidad=disponibilidad::getdisponibilidad();
         $view->contentTemplate="templates/disponibilidadGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'save Disponibilidad':
+    case 'saveDisponibilidad':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
@@ -40,7 +40,7 @@ switch ($action)
 
         $disponibilidad->save();
         break;
-    case 'new disponibilidad':
+    case 'newdisponibilidad':
         $view->disponibilidad=new disponibilidad();
         $view->label='Nueva disponibilidad';
         $view->disableLayout=true;
@@ -53,7 +53,7 @@ switch ($action)
         $view->disableLayout=true;
         $view->contentTemplate="templates/disponibilidadForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'delete disponibilidad':
+    case 'deletedisponibilidad':
         $Id=intval($_POST['Id']);
         $disponibilidad=new disponibilidad($Id);
         $disponibilidad->delete();
