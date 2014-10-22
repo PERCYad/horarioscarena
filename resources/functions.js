@@ -41,14 +41,16 @@
 
 
     $('#horario').live('submit',function(){
-        alert("chupino");
 		var params={};
         params.action='grabar';
-        params.id=$('#Id').val();
-        params.nombre=$('#nombre').val();
-        params.apellido=$('#apellido').val();
-        params.fecha=$('#fecha').val();
-        params.peso=$('#peso').val();
+        params.Id=$('#Id').val();
+        params.IdCarrera=$('#IdCarrera').val();
+        params.IdDia=$('#IdDia').val();
+        params.IdAsignatura=$('#IdAsignatura').val();
+        params.IdModulo=$('#IdModulo').val();
+        params.Inicio=$('#Inicio').val();
+        params.Fin=$('#Fin').val();
+
         $.post('horarios.php',params,function(){
             $('#block').hide();
             $('#popupbox').hide();
