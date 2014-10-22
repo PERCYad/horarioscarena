@@ -16,22 +16,23 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'horarios':
-        $view->horario=Horario::getHorarios(); // trae todos los horarios
+        $view->tabla="horarios";
+		$view->horario=Horario::getHorarios(); // trae todos los horarios
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'refreshGrid':
+	case 'refrescarGrilla':
         $view->disableLayout=true; // no usa el layout
         $view->horario=Horario::getHorarios();
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'saveClient':
+    case 'grabar':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $IdCarrera=cleanString($_POST['IdCarrera']);
-        $IdDia=cleanString($_POST['IdDia']);
-        $IdAsignatura=cleanString($_POST['IdAsignatura']);
-        $IdModulo=cleanString($_POST['IdModulo']);
+        $IdCarrera=intval($_POST['IdCarrera']);
+        $IdDia=intval($_POST['IdDia']);
+        $IdAsignatura=intval($_POST['IdAsignatura']);
+        $IdModulo=intval($_POST['IdModulo']);
         $IdInicio=cleanString($_POST['IdInicio']);
         $IdFin=cleanString($_POST['IdFin']);
 		
@@ -45,20 +46,20 @@ switch ($action)
 
         $Horario->save();
         break;
-    case 'newClient':
+    case 'nuevo':
         $view->horario=new Horario();
         $view->label='Nuevo Horario';
         $view->disableLayout=true;
         $view->contentTemplate="templates/horarioForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'editClient':
+    case 'editar':
         $editId=intval($_POST['Id']);
         $view->label='Editar Horario';
         $view->horario=new Horario($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/horarioForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'deleteClient':
+    case 'borrar':
         $Id=intval($_POST['Id']);
         $horario=new Horario($Id);
         $horario->delete();

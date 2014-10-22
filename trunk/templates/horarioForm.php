@@ -1,13 +1,13 @@
 ﻿<h2><?php echo $view->label ?></h2>
 <form name ="horario" id="horario" method="POST" action="horarios.php">
-    <input type="hidden" name="id" id="id" value="<?php print $view->horario->getId() ?>">
+    <input type="hidden" name="Id" id="Id" value="<?php print $view->horario->getId() ?>">
     <div>
         <label>IdCarrera</label>
         <input type="text" name="IdCarrera" id="IdCarrrera" value = "<?php print $view->horario->getIdCarrera() ?>">
     </div>
     <div>
         <label>IdDia</label>
-        <input type="text" name="IdDia" id="IdDia"value = "<?php print $view->horario->getIdDia() ?>">
+        <input type="text" name="IdDia" id="IdDia" value = "<?php print $view->horario->getIdDia() ?>">
     </div>
     <div>
         <label>IdAsignatura</label>

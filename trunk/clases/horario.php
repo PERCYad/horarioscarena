@@ -42,6 +42,8 @@ class Horario
 	 { return $this->IdDia;}
 	function getIdAsignatura()
 	 { return $this->IdAsignatura;}
+	function getIdModulo()
+	 { return $this->IdModulo;}
 	function getInicio()
 	 { return $this->Inicio;}
 	function getFin()
