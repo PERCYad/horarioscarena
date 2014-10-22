@@ -1,5 +1,4 @@
 ﻿<?php
-//GRUPO PRETTO - TESTA - RODRIGUEZ
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/docente.php");
 $action='docentes';
@@ -15,13 +14,14 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'docente':
-        $view->docente=docente::getdocente(); // trae todos los horarios
+    case 'docentes':
+		$view->tabla='docentes';
+        $view->docente=Docente::getDocente(); // trae todos los horarios
         $view->contentTemplate="templates/docentesGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refreshGrid':
         $view->disableLayout=true; // no usa el layout
-        $view->docentes=Horario::getDocentes();
+        $view->docente=Docente::getDocente();
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'saveDocente':
