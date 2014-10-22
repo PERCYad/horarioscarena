@@ -1,5 +1,4 @@
 ﻿<?php
-//GRUPO PRETTO - TESTA - RODRIGUEZ
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/horario.php");
 $action='horarios';
