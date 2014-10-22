@@ -1,5 +1,5 @@
 <?php
-class D
+class Disponibilidad
 {
 	var $Id;     //se declaran los atributos de la clase, que son los atributos del horario
 	var $IdDia;
@@ -25,8 +25,8 @@ class D
 			$this->Id=$row['Id'];
 			$this->IdDia=$row['IdDia'];
 			$this->IdDocente=$row['IdAsignatura'];
-			$this->Inicio=$row['Inicio'];
-			$this->Fin=$row['Fin'];
+			$this->Inicio=$row['IdInicio'];
+			$this->Fin=$row['IdFin'];
 		}
 	}
 		

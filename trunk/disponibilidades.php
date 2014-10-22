@@ -1,7 +1,7 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/disponibilidad.php");
-$action='disponibilidad';
+$action='disponibilidades';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
@@ -14,16 +14,17 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'disponibilidad':
+    case 'disponibilidades':
+	  $view->tabla='disponibilidades';
         $view->disponibilidad=disponibilidad::getdisponibilidad(); // trae todos los horarios
-        $view->contentTemplate="templates/disponibilidadGrid.php"; // seteo el template que se va a mostrar
+        $view->contentTemplate="templates/disponibilidadesGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'refreshGrid':
+    case 'refrescarGrilla':
         $view->disableLayout=true; // no usa el layout
         $view->disponibilidad=disponibilidad::getdisponibilidad();
         $view->contentTemplate="templates/disponibilidadGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'saveDisponibilidad':
+    case 'grabarDisponibilidad':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
@@ -32,7 +33,7 @@ switch ($action)
         $IdInicio=cleanString($_POST['IdInicio']);
         $IdFin=cleanString($_POST['IdFin']);
 		
-        $Id=new disponibilidad($Id);
+        $Id=new Disponibilidad($Id);
         $disponibilidad->setIdDia($IdDia);
         $disponibilidad->setIdDocente($IdDocente);
         $disponibilidad->setInicio($IdInicio);
@@ -40,20 +41,20 @@ switch ($action)
 
         $disponibilidad->save();
         break;
-    case 'newdisponibilidad':
+    case 'nuevaDisponibilidad':
         $view->disponibilidad=new disponibilidad();
         $view->label='Nueva disponibilidad';
         $view->disableLayout=true;
         $view->contentTemplate="templates/disponibilidadForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'editDisponibilidad':
+    case 'editarDisponibilidadDisponibilidad':
         $editId=intval($_POST['Id']);
         $view->label='Editar disponibilidad';
         $view->disponibilidad=new disponibilidad($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/disponibilidadForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'deletedisponibilidad':
+    case 'DeleteDisponibilidad':
         $Id=intval($_POST['Id']);
         $disponibilidad=new disponibilidad($Id);
         $disponibilidad->delete();
