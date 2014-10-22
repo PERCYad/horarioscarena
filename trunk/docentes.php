@@ -2,7 +2,7 @@
 //GRUPO PRETTO - TESTA - RODRIGUEZ
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/docente.php");
-$action='docente';
+$action='docentes';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
