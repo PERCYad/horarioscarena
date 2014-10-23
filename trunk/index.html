@@ -46,30 +46,32 @@
 		padding: 0 50px 50px; }
 </style>
 
-   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-    <script>
+<!--script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
 	function initialize() {
-  var fenway = new google.maps.LatLng(-31.7275943, -65.0044509);
-  var mapOptions = {
-    center: fenway,
-    zoom: 14
-  };
-  var map = new google.maps.Map(
-      document.getElementById('map-canvas'), mapOptions);
-  var panoramaOptions = {
-    position: fenway,
-    pov: {
-      heading: 34,
-      pitch: 10
-    }
-  };
-  var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'), panoramaOptions);
-  map.setStreetView(panorama);
-}
+		var fenway = new google.maps.LatLng(-31.7275943, -65.0044509);
+		var mapOptions = {
+		center: fenway,
+		zoom: 14
+	};
+	
+	var map = new google.maps.Map(
+    document.getElementById('map-canvas'), mapOptions);
+	var panoramaOptions = {
+		position: fenway,
+		pov: {
+		heading: 34,
+		pitch: 10
+		}
+	};
+  
+	var panorama = new google.maps.StreetViewPanorama(document.getElementById('pano'), panoramaOptions);
+	map.setStreetView(panorama);
+	}
 
-google.maps.event.addDomListener(window, 'load', initialize);
+	google.maps.event.addDomListener(window, 'load', initialize);
 
-    </script>
+</script-->
 
 	</head>
 

@@ -24,7 +24,7 @@ switch ($action)
         $view->docente=Docente::getDocente();
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'saveDocente':
+    case 'grabar':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
@@ -36,29 +36,29 @@ switch ($action)
         $IdFin=cleanString($_POST['IdFin']);
 		
         $Id=new Docente($Id);
-        $docente->setIdCarrera($IdCarrera);
-        $docente->setIdDia($IdDia);
-        $docente->setIdAsignatura($IdAsignatura);
-        $docente->setIdModulo($IdModulo);
-        $docente->setInicio($IdInicio);
-        $docente->setFin($IdFin);
+        $Docente->setIdCarrera($IdCarrera);
+        $Docente->setIdDia($IdDia);
+        $Docente->setIdAsignatura($IdAsignatura);
+        $Docente->setIdModulo($IdModulo);
+        $Docente->setInicio($IdInicio);
+        $Docente->setFin($IdFin);
 
-        $docente->save();
+        $Docente->save();
         break;
-    case 'newDocente':
-        $view->Horarios=new Docente();
+    case 'nuevo':
+        $view->docente=new Docente();
         $view->label='Nuevo Docente';
         $view->disableLayout=true;
         $view->contentTemplate="templates/docenteForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'editDocente':
+    case 'editar':
         $editId=intval($_POST['Id']);
         $view->label='Editar Docente';
-        $view->Docente=new Docente($editId);
+        $view->docente=new Docente($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/docenteForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'deleteDocente':
+    case 'borrar':
         $Id=intval($_POST['Id']);
         $docente=new Docente($Id);
         $docente->delete();

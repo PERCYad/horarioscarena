@@ -36,25 +36,25 @@ switch ($action)
         $IdDocentes=cleanString($_POST['IdDocentes']);
 		
         $Id=new Asignatura($Id);
-        $asignatura->setIdCarrera($IdCarrera);
-        $asignatura->setIdAnio($Anio);
-        $asignatura->setIdAsignatura($IdAsignatura);
-        $asignatura->setModulos($Modulos);
-        $asignatura->setAsignados($Asignados);
-        $asignatura->setIdDocente($IdDocentes);
+        $Asignatura->setIdCarrera($IdCarrera);
+        $Asignatura->setIdAnio($Anio);
+        $Asignatura->setIdAsignatura($IdAsignatura);
+        $Asignatura->setModulos($Modulos);
+        $Asignatura->setAsignados($Asignados);
+        $Asignatura->setIdDocente($IdDocentes);
 
-        $asignatura->save();
+        $Asignatura->save();
         break;
     case 'nuevo':
-        $view->Asignaturas=new Aignatura();
-        $view->label='Nuevo Asignatura';
+        $view->asignatura=new Aignatura();
+        $view->label='Nueva Asignatura';
         $view->disableLayout=true;
         $view->contentTemplate="templates/asignaturaForm.php"; // seteo el template que se va a mostrar
         break;
     case 'editar':
         $editId=intval($_POST['Id']);
         $view->label='Editar Asignatura';
-        $view->Asignatura=new Asignatura($editId);
+        $view->asignatura=new Asignatura($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/asignaturaForm.php"; // seteo el template que se va a mostrar
         break;

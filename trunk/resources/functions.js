@@ -31,7 +31,8 @@
     })
 
     $('#new').live('click',function(){
-        params={};
+        alert(document.title);
+		params={};
         params.action="nuevo";
         $('#popupbox').load('horarios.php', params,function(){
             $('#block').show();
