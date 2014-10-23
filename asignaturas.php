@@ -1,7 +1,7 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/asignatura.php");
-$action='asignaturas';
+$action='asignatura';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
@@ -14,7 +14,7 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'asignaturas':
+    case 'asignatura':
 	$view->tabla="asignaturas";
         $view->asignatura=Asignatura::getAsignaturas(); // trae todos los asignatura
         $view->contentTemplate="templates/asignaturasGrid.php"; // seteo el template que se va a mostrar
