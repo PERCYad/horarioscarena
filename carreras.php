@@ -15,15 +15,16 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'carreras':
-        $view->carreras=carreras::getcarreras(); // trae todos los horarios
+		$view->tabla='carreras';
+        $view->carrera=Carrera::getcarreras(); // trae todos los horarios
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refreshGrid':
         $view->disableLayout=true; // no usa el layout
-        $view->carreras=carreras::getcarreras();
+        $view->carrera=Carrera::getcarreras();
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'saveClient':
+    case 'grabar':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
@@ -32,28 +33,27 @@ switch ($action)
         
 		
         $Id=new Carrera($Id);
-        $carrera->setNombre($Nombre);
-        $carrera->setAnio($Anio);
+        $Carrera->setNombre($Nombre);
+        $Carrera->setAnio($Anio);
         
-
-        $carreras->save();
+        $Carrera->save();
         break;
-    case 'newClient':
-        $view->carreras=new carrera();
+    case 'nuevo':
+        $view->carrera=new Carrera();
         $view->label='Nueva carrera';
         $view->disableLayout=true;
         $view->contentTemplate="templates/carreraForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'editClient':
+    case 'editar':
         $editId=intval($_POST['Id']);
         $view->label='Editar carrera';
-        $view->carreras=new carreras($editId);
+        $view->carrera=new carreras($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/carreraForm.php"; // seteo el template que se va a mostrar
         break;
-    case 'deleteClient':
+    case 'borrar':
         $Id=intval($_POST['Id']);
-        $carrera=new carrera($Id);
+        $carrera=new Carrera($Id);
         $carrera->delete();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;

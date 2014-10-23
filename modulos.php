@@ -60,7 +60,6 @@ switch ($action)
         break;
     case 'borrar':
         $Id=intval($_POST['Id']);
-        $view->label='Eliminar Horario';
         $horario=new Horario($Id);
         $horario->delete();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
