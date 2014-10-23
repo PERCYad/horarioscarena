@@ -1,7 +1,7 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/horario.php");
-$action='horarios';
+$action='horario';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
@@ -14,7 +14,7 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'horarios':
+    case 'horario':
         $view->tabla="horarios";
 		$view->horario=Horario::getHorarios(); // trae todos los horarios
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
@@ -25,7 +25,8 @@ switch ($action)
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'grabar':
-        // limpio todos los valores antes de guardarlos
+        alert("grabando");
+		// limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
         $IdCarrera=intval($_POST['IdCarrera']);

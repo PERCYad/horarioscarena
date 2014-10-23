@@ -1,29 +1,16 @@
 ﻿<h2><?php echo $view->label ?></h2>
-<form name ="horario" id="horario" method="POST" action="index.php">
-    <input type="hidden" name="id" id="id" value="<?php print $view->horario->getId() ?>">
-    <div>
-        <label>IdCarrera</label>
-        <input type="text" name="IdCarrera" id="IdCarrrera" value = "<?php print $view->horario->getIdCarrera() ?>">
-    </div>
+<form name ="modulo" id="modulo" method="POST" action="modulos.php">
+    <input type="hidden" name="Id" id="Id" value="<?php print $view->modulo->getId() ?>">
     <div>
         <label>IdDia</label>
-        <input type="text" name="IdDia" id="IdDia"value = "<?php print $view->horario->getIdDia() ?>">
+        <input type="text" name="IdDia" id="IdDia"value = "<?php print $view->modulo->getIdDia() ?>">
     </div>
-    <div>
-        <label>IdAsignatura</label>
-        <input type="text" name="IdAsignatura" id="IdAsignatura" value = "<?php print $view->horario->getIdAsignatura() ?>">
-    </div>
-    <div>
-        <label>IdModulo</label>
-        <input type="text" name="IdModulo" id="IdModulo" value = "<?php print $view->horario->getIdModulo() ?>">
-    </div>
-    <div>
         <label>Inicio</label>
-        <input type="text" name="Inicio" id="Inicio" value = "<?php print $view->horario->getInicio() ?>">
+        <input type="text" name="Inicio" id="Inicio" value = "<?php print $view->modulo->getInicio() ?>">
     </div>
     <div>
         <label>Fin</label>
-        <input type="text" name="Fin" id="Fin" value = "<?php print $view->horario->getFin() ?>">
+        <input type="text" name="Fin" id="Fin" value = "<?php print $view->modulo->getFin() ?>">
     </div>
     <div class="buttonsBar">
         <input id="cancel" type="button" value ="Cancelar" />

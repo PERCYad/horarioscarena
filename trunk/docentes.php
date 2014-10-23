@@ -1,7 +1,7 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/docente.php");
-$action='docentes';
+$action='docente';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
@@ -14,7 +14,7 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
 {
-    case 'docentes':
+    case 'docente':
 		$view->tabla='docentes';
         $view->docente=Docente::getDocente(); // trae todos los horarios
         $view->contentTemplate="templates/docentesGrid.php"; // seteo el template que se va a mostrar

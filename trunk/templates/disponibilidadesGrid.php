@@ -24,6 +24,3 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-<!--div class="bar"-->
-    <a id="new" class="button" href="javascript:void(0);">Nueva Disponibilidad</a><br><br>
-<!--/div-->

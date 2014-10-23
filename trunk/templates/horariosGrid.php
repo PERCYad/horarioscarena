@@ -28,6 +28,3 @@
         <?php endforeach; ?>
     </tbody>
 </table>
-<!--div class="bar"-->
-    <a id="new" class="button" href="javascript:void(0);">Nuevo Horario</a><br><br>
-<!--/div-->
