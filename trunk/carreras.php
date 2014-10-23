@@ -28,13 +28,13 @@ switch ($action)
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $IdCarrera=cleanString($_POST['Nombre']);
-        $IdDia=cleanString($_POST['Anio']);
+        $Nombre=cleanString($_POST['Nombre']);
+        $Curso=cleanString($_POST['Curso']);
         
 		
         $Id=new Carrera($Id);
         $Carrera->setNombre($Nombre);
-        $Carrera->setAnio($Anio);
+        $Carrera->setCurso($Curso);
         
         $Carrera->save();
         break;

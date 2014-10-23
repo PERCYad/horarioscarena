@@ -29,16 +29,12 @@ switch ($action)
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
         $IdCarrera=cleanString($_POST['IdCarrera']);
-        $Anio=cleanString($_POST['Anio']);
-        $IdAsignatura=cleanString($_POST['IdAsignatura']);
         $Modulos=cleanString($_POST['Modulos']);
         $Asignados=cleanString($_POST['Asignados']);
         $IdDocentes=cleanString($_POST['IdDocentes']);
 		
         $Id=new Asignatura($Id);
         $Asignatura->setIdCarrera($IdCarrera);
-        $Asignatura->setIdAnio($Anio);
-        $Asignatura->setIdAsignatura($IdAsignatura);
         $Asignatura->setModulos($Modulos);
         $Asignatura->setAsignados($Asignados);
         $Asignatura->setIdDocente($IdDocentes);

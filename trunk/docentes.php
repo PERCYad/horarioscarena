@@ -16,32 +16,26 @@ switch ($action)
 {
     case 'docente':
 		$view->tabla='docentes';
-        $view->docente=Docente::getDocente(); // trae todos los horarios
+        $view->docente=Docente::getDocentes(); // trae todos los horarios
         $view->contentTemplate="templates/docentesGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refreshGrid':
         $view->disableLayout=true; // no usa el layout
-        $view->docente=Docente::getDocente();
+        $view->docente=Docente::getDocentes();
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'grabar':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $IdCarrera=cleanString($_POST['IdCarrera']);
-        $IdDia=cleanString($_POST['IdDia']);
-        $IdAsignatura=cleanString($_POST['IdAsignatura']);
-        $IdModulo=cleanString($_POST['IdModulo']);
-        $IdInicio=cleanString($_POST['IdInicio']);
-        $IdFin=cleanString($_POST['IdFin']);
+        $Apellidos=cleanString($_POST['Apellidos']);
+        $Nombres=cleanString($_POST['Nombres']);
+        $Correo=cleanString($_POST['Correo']);
 		
         $Id=new Docente($Id);
-        $Docente->setIdCarrera($IdCarrera);
-        $Docente->setIdDia($IdDia);
-        $Docente->setIdAsignatura($IdAsignatura);
-        $Docente->setIdModulo($IdModulo);
-        $Docente->setInicio($IdInicio);
-        $Docente->setFin($IdFin);
+        $Docente->setApellidos($IdApellidos);
+        $Docente->setNombre($Nombre);
+        $Docente->setCorreo($Correo);
 
         $Docente->save();
         break;
