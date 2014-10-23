@@ -51,9 +51,8 @@
         params.action='grabar';
         params.Id=$('#Id').val();
         params.IdCarrera=$('#IdCarrera').val();
-        params.IdDia=$('#IdDia').val();
-        params.IdAsignatura=$('#IdAsignatura').val();
-        params.IdModulo=$('#IdModulo').val();
+        params.Modulos=$('#Modulos').val();
+        params.Asignados=$('#Asignados').val();
         params.Inicio=$('#Inicio').val();
         params.Fin=$('#Fin').val();
 
@@ -69,12 +68,8 @@
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
-        params.IdCarrera=$('#IdCarrera').val();
-        params.IdDia=$('#IdDia').val();
-        params.IdAsignatura=$('#IdAsignatura').val();
-        params.IdModulo=$('#IdModulo').val();
-        params.Inicio=$('#Inicio').val();
-        params.Fin=$('#Fin').val();
+        params.Nombre=$('#Nombre').val();
+        params.Curso=$('#Curso').val();
 
         $.post('carreras.php',params,function(){
             $('#block').hide();
@@ -89,12 +84,8 @@
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
-        params.IdCarrera=$('#IdCarrera').val();
-        params.IdDia=$('#IdDia').val();
-        params.IdAsignatura=$('#IdAsignatura').val();
+        params.IdDocente=$('#IdDocente').val();
         params.IdModulo=$('#IdModulo').val();
-        params.Inicio=$('#Inicio').val();
-        params.Fin=$('#Fin').val();
 
         $.post('disponibilidades.php',params,function(){
             $('#block').hide();
@@ -109,12 +100,9 @@
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
-        params.IdCarrera=$('#IdCarrera').val();
-        params.IdDia=$('#IdDia').val();
-        params.IdAsignatura=$('#IdAsignatura').val();
-        params.IdModulo=$('#IdModulo').val();
-        params.Inicio=$('#Inicio').val();
-        params.Fin=$('#Fin').val();
+        params.Apellidos=$('#Apellidos').val();
+        params.Nombres=$('#Nombres').val();
+        params.Correo=$('#Correo').val();
 
         $.post('docentes.php',params,function(){
             $('#block').hide();
@@ -130,12 +118,9 @@
         params.action='grabar';
         params.Id=$('#Id').val();
         params.IdCarrera=$('#IdCarrera').val();
-        params.IdDia=$('#IdDia').val();
         params.IdAsignatura=$('#IdAsignatura').val();
         params.IdModulo=$('#IdModulo').val();
-        params.Inicio=$('#Inicio').val();
-        params.Fin=$('#Fin').val();
-
+ 
         $.post('horarios.php',params,function(){
             $('#block').hide();
             $('#popupbox').hide();
@@ -149,10 +134,7 @@
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
-        params.IdCarrera=$('#IdCarrera').val();
         params.IdDia=$('#IdDia').val();
-        params.IdAsignatura=$('#IdAsignatura').val();
-        params.IdModulo=$('#IdModulo').val();
         params.Inicio=$('#Inicio').val();
         params.Fin=$('#Fin').val();
 

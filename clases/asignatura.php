@@ -3,8 +3,6 @@ class asignatura
 {
     var $Id;
 	var $IdCarrera;     //se declaran los atributos de la clase, que son los atributos del horario
-	var $Anio;
-	var $IdAsignatura;
 	Var $Modulos;
 	Var $Asignados;
 	Var $IdDocente;
@@ -26,8 +24,6 @@ class asignatura
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->IdCarrera=$row['IdCarrera'];
-			$this->Anio=$row['Anio'];
-			$this->IdAsignatura=$row['IdAsignatura'];
 			$this->Modulos=$row['Modulos'];
 			$this->Asignados=$row['Asignados'];
 			$this->IdDocente=$row['Fin'];
@@ -39,10 +35,6 @@ class asignatura
 	 { return $this->Id;}
 	function getIdCarrera()
 	 { return $this->IdCarrera;}
-	function Anio()
-	 { return $this->Anio;}
-	function getIdAsignatura()
-	 { return $this->IdAsignatura;}
 	function getModulos()
 	 { return $this->Modulos;}
 	function getAsignados()
@@ -54,10 +46,6 @@ class asignatura
 	 
 	function setIdCarrera($val)
 	 { $this->IdCarrera=$val;}
-	function setAnio($val)
-	 {  $this->Anio=$val;}
-	function setIdAsignatura($val)
-	 {  $this->IdAsignatura=$val;}
 	function setModulos($val)
 	 {  $this->Modulos=$val;}
 	function setAsignados($val)
@@ -76,7 +64,7 @@ class asignatura
 	private function updateAsignatura()	// actualiza asignatura cargado en los atributos
 	{
 			$obj_asignatura=new sQuery();
-			$query="update asignaturas set IdCarrera='$this->IdCarrera', Anio='$this->Anio', IdAsignatura='$this->IdAsignatura', ModuloS='$this->ModuloS', asinados='$this->Asignados', IdDocente='$this->IdDocente' where Id = $this->Id";
+			$query="update asignaturas set IdCarrera='$this->IdCarrera', ModuloS='$this->ModuloS', asinados='$this->Asignados', IdDocente='$this->IdDocente' where Id = $this->Id";
 			$obj_asignatura->executeQuery($query); // ejecuta la consulta para traer a asignatura 
 			return $obj_asignatura->getAffect(); // retorna todos los registros afectados
 	
@@ -84,7 +72,7 @@ class asignatura
 	private function insertAsignatura()	// inserta asignatura cargado en los atributos
 	{
 			$obj_asignatura=new sQuery();
-			$query="insert into asignaturas( IdCarrera, Anio, IdAsignatura, ModuloS, Asignados, IdDocente )values('$this->IdCarrera', '$this->Anio','$this->IdAsignatura','$this->Modulos','$this->Asignados','$this->IdDocente')";
+			$query="insert into asignaturas( IdCarrera, Modulos, Asignados, IdDocente )values('$this->IdCarrera', '$this->Modulos','$this->Asignados','$this->IdDocente')";
 			
 			$obj_asignatura->executeQuery($query); // ejecuta la consulta para traer a asignatura 
 			return $obj_asignatura->getAffect(); // retorna todos los registros afectados

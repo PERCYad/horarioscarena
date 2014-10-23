@@ -2,10 +2,8 @@
 class Disponibilidad
 {
 	var $Id;     //se declaran los atributos de la clase, que son los atributos del horario
-	var $IdDia;
 	var $IdDocente;
-	Var $Inicio;
-	Var $Fin;
+	Var $IdModulo;
 
     public static function getDisponibilidad() 
 		{

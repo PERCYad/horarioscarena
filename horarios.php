@@ -30,19 +30,13 @@ switch ($action)
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
         $IdCarrera=intval($_POST['IdCarrera']);
-        $IdDia=intval($_POST['IdDia']);
         $IdAsignatura=intval($_POST['IdAsignatura']);
         $IdModulo=intval($_POST['IdModulo']);
-        $IdInicio=cleanString($_POST['IdInicio']);
-        $IdFin=cleanString($_POST['IdFin']);
 		
         $Id=new Horario($Id);
         $Horario->setIdCarrera($IdCarrera);
-        $Horario->setIdDia($IdDia);
         $Horario->setIdAsignatura($IdAsignatura);
         $Horario->setIdModulo($IdModulo);
-        $Horario->setInicio($IdInicio);
-        $Horario->setFin($IdFin);
 
         $Horario->save();
         break;

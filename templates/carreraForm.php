@@ -9,8 +9,8 @@
     </div>
     
     <div>
-        <label>Anio</label>
-        <input type="text" name="Anio" id="Anio" value = "<?php print $view->carreras->getPeso() ?>">
+        <label>Curso</label>
+        <input type="text" name="Curso" id="Curso" value = "<?php print $view->carreras->getCurso() ?>">
     </div>
     <div class="buttonsBar">
         <input id="cancel" type="button" value ="Cancelar" />
