@@ -1,9 +1,9 @@
 <?php
-class Horario
+class Carrera
 {
 	//se declaran los atributos de la clase, que son los atributos del horario
 	var $Id;
-	var $Nombre;
+	var $Carrera;
 	var $Curso;
 
     public static function getCarreras() 
@@ -22,7 +22,7 @@ class Horario
 			$result=$obj_carrera->executeQuery("select * from carreras where id = $nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
-			$this->Nombre=$row['Nombre'];
+			$this->Carrera=$row['Carrera'];
 			$this->Curso=$row['Curso'];
 		}
 	}
@@ -30,14 +30,14 @@ class Horario
 		// metodos que devuelven valores
 	function getId()
 	 { return $this->Id;}
-	function getNombre()
-	 { return $this->IdNombre;}
+	function getCarrera()
+	 { return $this->Carrera;}
 	function getCurso()
 	 { return $this->Curso;}
 	 
 		// metodos que setean los valores
-	function setNombre($val)
-	 {  $this->Nombre=$val;}
+	function setCarrera($val)
+	 {  $this->Carrera=$val;}
 	function setCurso($val)
 	 {  $this->Curso=$val;}
 
@@ -52,7 +52,7 @@ class Horario
 	private function updateCarrera()	// actualiza el horario cargado en los atributos
 	{
 			$obj_carrera=new sQuery();
-			$query="update carreras set IdNombre='$this->Nombre', Curso='$this->Curso'";
+			$query="update carreras set Carrera='$this->Carrera', Curso='$this->Curso'";
 			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	
@@ -61,7 +61,7 @@ class Horario
 	private function insertCarrera()	// inserta el horario cargado en los atributos
 	{
 			$obj_carrera=new sQuery();
-			$query="insert into carreras( Nombre, Curso )values('$this->Nombre', '$this->Carrera')";
+			$query="insert into carreras( Carrera, Curso )values('$this->Carrera', '$this->Curso')";
 			
 			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_carrera->getAffect(); // retorna todos los registros afectados

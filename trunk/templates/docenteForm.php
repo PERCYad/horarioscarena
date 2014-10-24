@@ -17,15 +17,6 @@
         <label>Correo</label>
         <input type="text" name="Correo" id="Correo" value = "<?php print $view->docente->getCorreo() ?>">
     </div>
-	 <div>
-        <label>Inicio</label>
-        <input type="text" name="Inicio" id="Inicio" value = "<?php print $view->docente->getInicio() ?>">
-    </div>
-    <div>
-        <label>Fin</label>
-        <input type="text" name="Fin" id="Fin" value = "<?php print $view->docente->getFin() ?>">
-    </div>
-   
     <div class="buttonsBar">
         <input id="cancel" type="button" value ="Cancelar" />
         <input id="submit" type="submit" name="submit" value ="Guardar" />

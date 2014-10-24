@@ -31,13 +31,13 @@ switch ($action)
         $IdCarrera=cleanString($_POST['IdCarrera']);
         $Modulos=cleanString($_POST['Modulos']);
         $Asignados=cleanString($_POST['Asignados']);
-        $IdDocentes=cleanString($_POST['IdDocentes']);
+        $IdDocente=cleanString($_POST['IdDocente']);
 		
         $Id=new Asignatura($Id);
         $Asignatura->setIdCarrera($IdCarrera);
         $Asignatura->setModulos($Modulos);
         $Asignatura->setAsignados($Asignados);
-        $Asignatura->setIdDocente($IdDocentes);
+        $Asignatura->setIdDocent($IdDocente);
 
         $Asignatura->save();
         break;

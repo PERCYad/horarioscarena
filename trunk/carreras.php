@@ -1,6 +1,6 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
-include_once ("clases/carreras.php");
+include_once ("clases/carrera.php");
 $action='carrera';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
@@ -16,43 +16,44 @@ switch ($action)
 {
     case 'carrera':
 		$view->tabla='carreras';
-        $view->carrera=Carrera::getcarreras(); // trae todos los horarios
+        $view->carrera=Carrera::getCarreras(); // trae todos los horarios
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refreshGrid':
         $view->disableLayout=true; // no usa el layout
-        $view->carrera=Carrera::getcarreras();
+        $view->carrera=Carrera::getCarreras();
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'grabar':
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $Nombre=cleanString($_POST['Nombre']);
+        $Carrera=cleanString($_POST['Carrera']);
         $Curso=cleanString($_POST['Curso']);
         
 		
         $Id=new Carrera($Id);
-        $Carrera->setNombre($Nombre);
+        $Carrera->setCarrera($Carrera);
         $Carrera->setCurso($Curso);
         
         $Carrera->save();
         break;
     case 'nuevo':
         $view->carrera=new Carrera();
-        $view->label='Nueva carrera';
+        $view->label='Nueva Carrera';
         $view->disableLayout=true;
         $view->contentTemplate="templates/carreraForm.php"; // seteo el template que se va a mostrar
         break;
     case 'editar':
         $editId=intval($_POST['Id']);
-        $view->label='Editar carrera';
-        $view->carrera=new carreras($editId);
+        $view->label='Editar Carrera';
+        $view->carrera=new Carrera($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/carreraForm.php"; // seteo el template que se va a mostrar
         break;
     case 'borrar':
         $Id=intval($_POST['Id']);
+        $view->label='Eliminar Carrera';
         $carrera=new Carrera($Id);
         $carrera->delete();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.

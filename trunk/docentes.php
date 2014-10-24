@@ -33,7 +33,7 @@ switch ($action)
         $Correo=cleanString($_POST['Correo']);
 		
         $Id=new Docente($Id);
-        $Docente->setApellidos($IdApellidos);
+        $Docente->setApellidos($Apellidos);
         $Docente->setNombre($Nombre);
         $Docente->setCorreo($Correo);
 

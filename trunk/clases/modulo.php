@@ -20,7 +20,7 @@ class Modulo
 		if ($nro!=0)
 		{
 			$obj_modulo=new sQuery();
-			$result=$obj_modulo->executeQuery("select * from modulo where Id = $nro"); // ejecuta la consulta para traer al horario 
+			$result=$obj_modulo->executeQuery("select * from modulos where Id = $nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->IdDia=$row['IdDia'];

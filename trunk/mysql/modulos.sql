@@ -6,7 +6,6 @@ USE `horarios`;
 CREATE TABLE `Modulos` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `IdDia` int NOT NULL,
-  `IdAsignatura` int NOT NULL,
   `Inicio` time NOT NULL,
   `Fin` time NOT NULL,
   PRIMARY KEY (`Id`)

@@ -6,8 +6,6 @@ USE `horarios`;
 CREATE TABLE `asignaturas` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `IdCarrera` int(11) NOT NULL,
-  `Anio` int(11) NOT NULL,
-  `IdAsignatura` int(11) NOT NULL,
   `Modulos` int(11) NOT NULL,
   `Asignados` int(11) NOT NULL,
   `IdDocente` int(11) NOT NULL,

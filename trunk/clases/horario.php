@@ -4,11 +4,8 @@ class Horario
 	//se declaran los atributos de la clase, que son los atributos del horario
 	var $Id;
 	var $IdCarrera;
-	var $IdDia;
 	var $IdAsignatura;
 	Var $IdModulo;
-	Var $Inicio;
-	Var $Fin;
 
     public static function getHorarios() 
 		{
@@ -27,11 +24,8 @@ class Horario
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->IdCarrera=$row['IdCarrera'];
-			$this->IdDia=$row['IdDia'];
 			$this->IdAsignatura=$row['IdAsignatura'];
 			$this->IdModulo=$row['IdModulo'];
-			$this->Inicio=$row['Inicio'];
-			$this->Fin=$row['Fin'];
 		}
 	}
 		
@@ -40,28 +34,16 @@ class Horario
 	 { return $this->Id;}
 	function getIdCarrera()
 	 { return $this->IdCarrera;}
-	function getIdDia()
-	 { return $this->IdDia;}
 	function getIdAsignatura()
 	 { return $this->IdAsignatura;}
 	function getIdModulo()
 	 { return $this->IdModulo;}
-	function getInicio()
-	 { return $this->Inicio;}
-	function getFin()
-	 { return $this->Fin;}
 	 
 		// metodos que setean los valores
-	function setIdDia($val)
-	 {  $this->IdDia=$val;}
 	function setIdAsignatura($val)
 	 {  $this->IdAsignatura=$val;}
 	function setIdModulo($val)
 	 {  $this->IdModulo=$val;}
-	function setInicio($val)
-	 {  $this->Incio=$val;}
-	function setFin($val)
-	 {  $this->Fin=$val;}
 
     function save()
     {
@@ -74,7 +56,7 @@ class Horario
 	private function updateHorario()	// actualiza el horario cargado en los atributos
 	{
 			$obj_horario=new sQuery();
-			$query="update horarios set IdCarrera='$this->IdCarrera', IdDia='$this->IdDia', IdAsignatura='$this->IdAsignatura', IdModulo='$this->IdModulo', Inicio='$this->Inicio', Fin='$this->Fin' where Id = $this->Id";
+			$query="update horarios set IdCarrera='$this->IdCarrera', IdAsignatura='$this->IdAsignatura', IdModulo='$this->IdModulo' where Id = $this->Id";
 			$obj_horario->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
 	
@@ -83,7 +65,7 @@ class Horario
 	private function insertHorario()	// inserta el horario cargado en los atributos
 	{
 			$obj_horario=new sQuery();
-			$query="insert into horarios( IdCarrera, IdDia, IdAsignatura, IdModulo, Incio, Fin )values('$this->IdCarrera', '$this->IdDia','$this->IdAsignatura','$this->IdModulo','$this->Inicio','$this->Fin')";
+			$query="insert into horarios( IdCarrera, IdAsignatura, IdModulo )values('$this->IdCarrera', '$this->IdAsignatura', '$this->IdModulo')";
 			
 			$obj_horario->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
