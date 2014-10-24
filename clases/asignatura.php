@@ -78,7 +78,7 @@ class asignatura
 			return $obj_asignatura->getAffect(); // retorna todos los registros afectados
 	
 	}	
-	function delete()	// elimina el asignatura
+	function deleteAsignatura()	// elimina el asignatura
 	{
 			$obj_asignatura=new sQuery();
 			$query="delete from asignaturas where Id=$this->Id";

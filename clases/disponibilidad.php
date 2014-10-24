@@ -31,14 +31,14 @@ class Disponibilidad
 	 { return $this->Id;}
 	function getIdDocente()
 	 { return $this->IdDocente;}
-	function getImodulo()
+	function getIdModulo()
 	 { return $this->IdModulo;}
 	 
 		// metodos que setean los valores
 	function setIdDocente($val)
 	 {  $this->IdDocente=$val;}
-	function setModulo($val)
-	 {  $this->Modulo=$val;}
+	function setIdModulo($val)
+	 {  $this->IdModulo=$val;}
 
     function save()
     {
@@ -56,6 +56,7 @@ class Disponibilidad
 			return $obj_disponibilidad->getAffect(); // retorna todos los registros afectados
 	
 	}
+
 	private function insertDisponibilidad()	// inserta el horario cargado en los atributos
 	{
 			$obj_disponibilidad=new sQuery();
@@ -65,7 +66,8 @@ class Disponibilidad
 			return $obj_disponibilidad->getAffect(); // retorna todos los registros afectados
 	
 	}	
-	function delete()	// elimina el horario
+
+	function deleteDisponibilidad()	// elimina el horario
 	{
 			$obj_disponibilidad=new sQuery();
 			$query="delete from disponibilidad where Id=$this->Id";

@@ -8,6 +8,7 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
+$view->tabla="asignaturas";
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
@@ -15,7 +16,6 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'asignatura':
-		$view->tabla="asignaturas";
         $view->asignatura=Asignatura::getAsignaturas(); // trae todos los asignatura
         $view->contentTemplate="templates/asignaturasGrid.php"; // seteo el template que se va a mostrar
         break;
@@ -42,7 +42,7 @@ switch ($action)
         $Asignatura->save();
         break;
     case 'nuevo':
-        $view->asignatura=new Aignatura();
+        $view->asignatura=new Asignatura();
         $view->label='Nueva Asignatura';
         $view->disableLayout=true;
         $view->contentTemplate="templates/asignaturaForm.php"; // seteo el template que se va a mostrar
@@ -57,7 +57,7 @@ switch ($action)
     case 'borrar':
         $Id=intval($_POST['Id']);
         $asignatura=new Asignatura($Id);
-        $asignatura->delete();
+        $asignatura->deleteAsignatura();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;
     default :

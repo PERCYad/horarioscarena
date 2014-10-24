@@ -74,7 +74,7 @@ class Modulo
 	
 	}	
 	
-	function delete()	// elimina el horario
+	function deleteModulo()	// elimina el horario
 	{
 			$obj_modulo=new sQuery();
 			$query="delete from modulo where Id=$this->Id";

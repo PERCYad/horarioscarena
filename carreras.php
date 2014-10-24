@@ -8,6 +8,7 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
+$view->tabla='carreras';
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
@@ -15,7 +16,6 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'carrera':
-		$view->tabla='carreras';
         $view->carrera=Carrera::getCarreras(); // trae todos los horarios
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
@@ -54,7 +54,7 @@ switch ($action)
         $Id=intval($_POST['Id']);
         $view->label='Eliminar Carrera';
         $carrera=new Carrera($Id);
-        $carrera->delete();
+        $carrera->deleteCarrera();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;
     default :

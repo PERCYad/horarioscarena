@@ -26,7 +26,7 @@ class Carrera
 			$this->Curso=$row['Curso'];
 		}
 	}
-		
+	
 		// metodos que devuelven valores
 	function getId()
 	 { return $this->Id;}
@@ -62,13 +62,12 @@ class Carrera
 	{
 			$obj_carrera=new sQuery();
 			$query="insert into carreras( Carrera, Curso )values('$this->Carrera', '$this->Curso')";
-			
 			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	
 	}	
 	
-	function delete()	// elimina el horario
+	function deleteCarrera()	// elimina el horario
 	{
 			$obj_carrera=new sQuery();
 			$query="delete from carreras where Id=$this->Id";

@@ -8,6 +8,7 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
+$view->tabla='disponibilidades';
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
@@ -15,14 +16,13 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'disponibilidad':
-		$view->tabla='disponibilidades';
-        $view->disponibilidad=Disponibilidad::getdisponibilidad(); // trae todos los horarios
+        $view->disponibilidad=Disponibilidad::getDisponibilidad(); // trae todos los horarios
         $view->contentTemplate="templates/disponibilidadesGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'refrescarGrilla':
         $view->disableLayout=true; // no usa el layout
-        $view->disponibilidad=Disponibilidad::getdisponibilidad();
-        $view->contentTemplate="templates/disponibilidadGrid.php"; // seteo el template que se va a mostrar
+        $view->disponibilidad=Disponibilidad::getDisponibilidad();
+        $view->contentTemplate="templates/disponibilidadesGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'grabar':
         // limpio todos los valores antes de guardarlos
@@ -37,7 +37,7 @@ switch ($action)
 
         $Disponibilidad->save();
         break;
-    case 'nueva':
+    case 'nuevo':
         $view->disponibilidad=new Disponibilidad();
         $view->label='Nueva disponibilidad';
         $view->disableLayout=true;
@@ -53,7 +53,7 @@ switch ($action)
     case 'borrar':
         $Id=intval($_POST['Id']);
         $disponibilidad=new disponibilidad($Id);
-        $disponibilidad->delete();
+        $disponibilidad->deleteDisponibilidad();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;
     default :
