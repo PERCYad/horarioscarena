@@ -10,8 +10,5 @@ CREATE TABLE `Horarios` (
   `IdCarrera` int NOT NULL,
   `IdAsignatura` int NOT NULL,
   `IdModulo` int NOT NULL,
-  `IdDia` int NOT NULL,
-  `Inicio` time NOT NULL,
-  `Fin` time NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;

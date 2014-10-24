@@ -8,7 +8,7 @@ class Disponibilidad
     public static function getDisponibilidad() 
 		{
 			$obj_disponibilidad=new sQuery();
-			$obj_disponibilidad->executeQuery("select * from disponibilidad"); // ejecuta la consulta para traer al horario
+			$obj_disponibilidad->executeQuery("select * from disponibilidades"); // ejecuta la consulta para traer al horario
 
 			return $obj_disponibilidad->fetchAll(); // retorna todos los horarios
 		}
@@ -18,37 +18,27 @@ class Disponibilidad
 		if ($nro!=0)
 		{
 			$obj_disponibilidad=new sQuery();
-			$result=$obj_disponibilidad->executeQuery("select * from disponibilidad where id = $nro"); // ejecuta la consulta para traer al horario 
+			$result=$obj_disponibilidad->executeQuery("select * from disponibilidades where id = $nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
-			$this->IdDia=$row['IdDia'];
 			$this->IdDocente=$row['IdAsignatura'];
-			$this->Inicio=$row['IdInicio'];
-			$this->Fin=$row['IdFin'];
+			$this->IdModulo=$row['IdModulo'];
 		}
 	}
 		
 		// metodos que devuelven valores
 	function getId()
 	 { return $this->Id;}
-	function getIdDia()
-	 { return $this->IdDia;}
 	function getIdDocente()
 	 { return $this->IdDocente;}
-	function getInicio()
-	 { return $this->Inicio;}
-	function getFin()
-	 { return $this->Fin;}
+	function getImodulo()
+	 { return $this->IdModulo;}
 	 
 		// metodos que setean los valores
-	function setIdDia($val)
-	 {  $this->IdDia=$val;}
 	function setIdDocente($val)
 	 {  $this->IdDocente=$val;}
-	function setInicio($val)
-	 {  $this->Incio=$val;}
-	function setFin($val)
-	 {  $this->Fin=$val;}
+	function setModulo($val)
+	 {  $this->Modulo=$val;}
 
     function save()
     {
@@ -61,7 +51,7 @@ class Disponibilidad
 	private function updateDisponibilidad()	// actualiza el horario cargado en los atributos
 	{
 			$obj_disponibilidad=new sQuery();
-			$query="update disponibilidad set IdDocente='$this->IdDocente', IdDia='$this->IdDia', Inicio='$this->Inicio', Fin='$this->Fin' where Id = $this->Id";
+			$query="update disponibilidad set IdDocente='$this->IdDocente', IdModulo='$this->IdModulo'";
 			$obj_disponibilidad->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_disponibilidad->getAffect(); // retorna todos los registros afectados
 	
@@ -69,7 +59,7 @@ class Disponibilidad
 	private function insertDisponibilidad()	// inserta el horario cargado en los atributos
 	{
 			$obj_disponibilidad=new sQuery();
-			$query="insert into disponibilidad ( IdDocente, IdDia,Incio, Fin )values('$this->IdDocente', '$this->IdDia','$this->Inicio','$this->Fin')";
+			$query="insert into disponibilidad ( IdDocente, IdModulo )values('$this->IdDocente', '$this->IdModulo')";
 			
 			$obj_disponibilidad->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_disponibilidad->getAffect(); // retorna todos los registros afectados

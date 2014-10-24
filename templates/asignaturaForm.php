@@ -2,24 +2,12 @@
 <form name ="asignatura" id="asignatura" method="POST" action="index.php">
     <input type="hidden" name="Id" id="Id" value="<?php print $view->asignatura->getId() ?>">
     <div>
-        <label>Id</label>
-        <input type="text" name="Idasignatura" id="Idasignatura" value = "<?php print $view->asignatura->getId() ?>">
-    </div>
-    <div>
         <label>IdCarrera</label>
         <input type="text" name="IdCarrera" id="IdCarrera"value = "<?php print $view->asignatura->getIdCarrera() ?>">
     </div>
     <div>
-        <label>Anio</label>
-        <input type="text" name="Anio" id="IdAsignatura" value = "<?php print $view->asignatura->getAnio() ?>">
-    </div>
-	 <div>
-        <label>IdAsignatura</label>
-        <input type="text" name="IdAsignatura" id="IdAsignatura" value = "<?php print $view->asignatura->getIdAsignatura() ?>">
-    </div
-    <div>
-        <label>Modulo</label>
-        <input type="text" name="Modulo" id="Modulos" value = "<?php print $view->asignatura->getModulos() ?>">
+        <label>Modulos</label>
+        <input type="text" name="Modulos" id="Modulos" value = "<?php print $view->asignatura->getModulos() ?>">
     </div>
     <div>
         <label>Asignados</label>

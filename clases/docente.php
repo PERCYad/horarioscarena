@@ -4,10 +4,7 @@ class Docente
 	var $Id;     //se declaran los atributos de la clase, que son los atributos del horario
 	var $Apellidos;
 	var $Nombres;
-	var $Dia;
-	var $Asignatura;
-	Var $Inicio;
-	Var $Fin;
+	var $Correo;
 
     public static function getDocente() 
 		{
@@ -26,10 +23,8 @@ class Docente
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->Apellidos=$row['Apellidos'];
-			$this->IdDia=$row['IdDia'];
-			$this->IdAsignatura=$row['IdAsignatura'];
-			$this->Inicio=$row['Inicio'];
-			$this->Fin=$row['Fin'];
+			$this->Nombres=$row['Nombre'];
+			$this->Correo=$row['Correo'];
 		}
 	}
 		
@@ -38,26 +33,18 @@ class Docente
 	 { return $this->Id;}
 	function getApellidos()
 	 { return $this->Apellidos;}
-	function getIdDia()
-	 { return $this->IdDia;}
-	function getIdAsignatura()
-	 { return $this->IdAsignatura;}
-	function getInicio()
-	 { return $this->Inicio;}
-	function getFin()
-	 { return $this->Fin;}
+	function getNombres()
+	 { return $this->Nombres;}
+	 function getCorreo()
+	 { return $this->Correo;}
 	 
 		// metodos que setean los valores
 	function setApellidos($val)
 	 { $this->Apellidos=$val;}
-	function setIdDia($val)
-	 {  $this->IdDia=$val;}
-	function setIdAsignatura($val)
-	 {  $this->IdAsignatura=$val;}
-	function setInicio($val)
-	 {  $this->Incio=$val;}
-	function setFin($val)
-	 {  $this->Fin=$val;}
+	function setNombres($val)
+	 {  $this->Nombres=$val;}
+	function setCorreo($val)
+	 {  $this->Correo=$val;}
 
     function save()
     {
@@ -70,7 +57,7 @@ class Docente
 	private function updateDocente()	// actualiza el horario cargado en los atributos
 	{
 			$obj_docente=new sQuery();
-			$query="update docentes set Apellidos='$this->Apellidos', IdDia='$this->IdDia', IdAsignatura='$this->IdAsignatura', Inicio='$this->Inicio', Fin='$this->Fin' where Id = $this->Id";
+			$query="update docentes set Apellidos='$this->Apellidos', Nombre='$this->Nombres', Correo='$this->Correo' where Id = $this->Id";
 			$obj_docente->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_docente->getAffect(); // retorna todos los registros afectados
 	
@@ -78,7 +65,7 @@ class Docente
 	private function insertDocente()	// inserta el horario cargado en los atributos
 	{
 			$obj_docente=new sQuery();
-			$query="insert into docentes( Apellidos, IdDia, IdAsignatura, Incio, Fin )values('$this->Apellidos', '$this->IdDia','$this->IdAsignatura','$this->Inicio','$this->Fin')";
+			$query="insert into docentes( Apellidos, Nombre, Correo', '$this->Apellidos','$this->Nombres','$this->Correo')";
 			
 			$obj_docente->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_docente->getAffect(); // retorna todos los registros afectados

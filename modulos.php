@@ -29,13 +29,13 @@ switch ($action)
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
         $IdDia=intval($_POST['IdDia']);
-        $IdInicio=cleanString($_POST['IdInicio']);
-        $IdFin=cleanString($_POST['IdFin']);
+        $IdInicio=cleanString($_POST['Inicio']);
+        $IdFin=cleanString($_POST['Fin']);
 		
         $Id=new Modulo($Id);
         $Modulo->setIdDia($IdDia);
-        $Modulo->setInicio($IdInicio);
-        $Modulo->setFin($IdFin);
+        $Modulo->setInicio($Inicio);
+        $Modulo->setFin($Fin);
 
         $Modulo->save();
         break;

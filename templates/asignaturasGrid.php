@@ -3,8 +3,6 @@
         <tr>
             <th>Id</th>
             <th>IdCarrera</th>
-            <th>Anio</th>
-            <th>IdAsignatura</th>
             <th>Modulos</th>
             <th>Asignados</th>
             <th>IdDocente</th>
@@ -17,8 +15,6 @@
             <tr>
                 <td><?php echo $asignatura['Id'];?></td>
                 <td><?php echo $asignatura['IdCarrera'];?></td>
-                <td><?php echo $asignatura['Anio'];?></td>
-                <td><?php echo $asignatura['IdAsignatura'];?></td>
                 <td><?php echo $asignatura['Modulos'];?></td>
                 <td><?php echo $asignatura['Asignados'];?></td>
                 <td><?php echo $asignatura['IdDocente'];?></td>
