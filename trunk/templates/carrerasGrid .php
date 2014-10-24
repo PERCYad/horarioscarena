@@ -4,12 +4,12 @@
             <th>Id</th>
             <th>Carrera</th>
             <th>Curso</th>
-			<th>Editar</th>
-			<th>Borrar</th>
+            <th>Editar</th>
+            <th>Borrar</th>
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($view->carrera as $carrera):  ?>
+        <?php foreach ($view->carrera as $carrera):  // uso la otra sintaxis de php para templates ?>
             <tr>
                 <td><?php echo $carrera['Id'];?></td>
                 <td><?php echo $carrera['Carrera'];?></td>

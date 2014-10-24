@@ -66,13 +66,12 @@ class Horario
 	{
 			$obj_horario=new sQuery();
 			$query="insert into horarios( IdCarrera, IdAsignatura, IdModulo )values('$this->IdCarrera', '$this->IdAsignatura', '$this->IdModulo')";
-			
 			$obj_horario->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
 	
 	}	
 	
-	function delete()	// elimina el horario
+	function deleteHorario()	// elimina el horario
 	{
 			$obj_horario=new sQuery();
 			$query="delete from horarios where Id=$this->Id";

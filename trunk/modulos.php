@@ -8,6 +8,7 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
+$view->tabla="modulos";
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
@@ -15,7 +16,6 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'modulo':
-        $view->tabla="modulos";
 		$view->modulo=Modulo::getModulos(); // trae todos los horarios
         $view->contentTemplate="templates/modulosGrid.php"; // seteo el template que se va a mostrar
         break;
@@ -55,7 +55,7 @@ switch ($action)
     case 'borrar':
         $Id=intval($_POST['Id']);
         $modulo=new Modulo($Id);
-        $modulo->delete();
+        $modulo->deleteModulos();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;
     default :

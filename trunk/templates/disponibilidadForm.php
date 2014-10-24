@@ -1,5 +1,5 @@
-﻿<h2><?php echo $view->table ?></h2>
-<form name ="disponibilidad" id="disponibilidades" method="POST" action="disponibilidades.php">
+﻿<h2><?php echo $view->tabla ?></h2>
+<form name ="disponibilidad" id="disponibilidad" method="POST" action="disponibilidades.php">
     <input type="hidden" name="Id" id="Id" value="<?php print $view->disponibilidad->getId() ?>">
     <div>
         <label>IdDocente</label>

@@ -71,7 +71,7 @@ class Docente
 			return $obj_docente->getAffect(); // retorna todos los registros afectados
 	
 	}	
-	function delete()	// elimina el horario
+	function deleteDocente()	// elimina el horario
 	{
 			$obj_docente=new sQuery();
 			$query="delete from docentes where Id=$this->Id";
