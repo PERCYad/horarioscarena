@@ -25,8 +25,7 @@ switch ($action)
         $view->contentTemplate="templates/horariosGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'grabar':
-        alert("grabando");
-		// limpio todos los valores antes de guardarlos
+ 		// limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
         $IdCarrera=intval($_POST['IdCarrera']);

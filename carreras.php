@@ -19,7 +19,7 @@ switch ($action)
         $view->carrera=Carrera::getCarreras(); // trae todos los horarios
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'refreshGrid':
+    case 'refrescarGrilla':
         $view->disableLayout=true; // no usa el layout
         $view->carrera=Carrera::getCarreras();
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
@@ -30,7 +30,6 @@ switch ($action)
         $Id=intval($_POST['Id']);
         $Carrera=cleanString($_POST['Carrera']);
         $Curso=cleanString($_POST['Curso']);
-        
 		
         $Id=new Carrera($Id);
         $Carrera->setCarrera($Carrera);

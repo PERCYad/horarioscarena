@@ -53,8 +53,7 @@
         params.IdCarrera=$('#IdCarrera').val();
         params.Modulos=$('#Modulos').val();
         params.Asignados=$('#Asignados').val();
-        params.Inicio=$('#Inicio').val();
-        params.Fin=$('#Fin').val();
+        params.IdDocente=$('#IdDocente').val();
 
         $.post('asignaturas.php',params,function(){
             $('#block').hide();
@@ -68,7 +67,7 @@
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
-        params.Nombre=$('#Nombre').val();
+        params.Carrera=$('#Carrera').val();
         params.Curso=$('#Curso').val();
 
         $.post('carreras.php',params,function(){
@@ -84,8 +83,10 @@
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
+        params.IdCarrera=$('#IdCarrera').val();
+        params.Modulos=$('#Modulos').val();
+        params.Asignados=$('#Asignados').val();
         params.IdDocente=$('#IdDocente').val();
-        params.IdModulo=$('#IdModulo').val();
 
         $.post('disponibilidades.php',params,function(){
             $('#block').hide();
