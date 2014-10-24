@@ -2,10 +2,6 @@
 <form name ="docente" id="horario" method="POST" action="docente.php">
     <input type="hidden" name="id" id="id" value="<?php print $view->docente->getId() ?>">
     <div>
-        <label>Id</label>
-        <input type="text" name="Id" id="Id" value = "<?php print $view->docente->getId() ?>">
-    </div>
-    <div>
         <label>Apellidos</label>
         <input type="text" name="Apellidos" id="Apellidos"value = "<?php print $view->docente->getApellidos() ?>">
     </div>

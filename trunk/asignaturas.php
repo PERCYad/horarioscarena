@@ -15,7 +15,7 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 switch ($action)
 {
     case 'asignatura':
-	$view->tabla="asignaturas";
+		$view->tabla="asignaturas";
         $view->asignatura=Asignatura::getAsignaturas(); // trae todos los asignatura
         $view->contentTemplate="templates/asignaturasGrid.php"; // seteo el template que se va a mostrar
         break;

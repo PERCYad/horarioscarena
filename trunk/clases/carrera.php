@@ -52,7 +52,7 @@ class Carrera
 	private function updateCarrera()	// actualiza el horario cargado en los atributos
 	{
 			$obj_carrera=new sQuery();
-			$query="update carreras set Carrera='$this->Carrera', Curso='$this->Curso'";
+			$query="update carreras set Carrera='$this->Carrera', Curso='$this->Curso' where Id = $this->Id";
 			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	

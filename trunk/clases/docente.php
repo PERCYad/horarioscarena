@@ -6,7 +6,7 @@ class Docente
 	var $Nombres;
 	var $Correo;
 
-    public static function getDocente() 
+    public static function getDocentes() 
 		{
 			$obj_docente=new sQuery();
 			$obj_docente->executeQuery("select * from docentes"); // ejecuta la consulta para traer al horario
