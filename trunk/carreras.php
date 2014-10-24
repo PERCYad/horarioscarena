@@ -8,7 +8,7 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
-$view->tabla='carreras';
+$view->tabla="carreras";
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
@@ -16,25 +16,25 @@ $view->tabla='carreras';
 switch ($action)
 {
     case 'carrera':
-        $view->carrera=Carrera::getCarreras(); // trae todos los horarios
+		$view->carrera=Carrera::getCarreras(); // trae todos los horarios
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
-    case 'refrescarGrilla':
+	case 'refrescarGrilla':
         $view->disableLayout=true; // no usa el layout
         $view->carrera=Carrera::getCarreras();
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
     case 'grabar':
-        // limpio todos los valores antes de guardarlos
+ 		// limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $Carrera=cleanString($_POST['Carrera']);
-        $Curso=cleanString($_POST['Curso']);
+        $Carrera=intval($_POST['Carrera']);
+        $Curso=intval($_POST['Curso']);
 		
         $Id=new Carrera($Id);
         $Carrera->setCarrera($Carrera);
         $Carrera->setCurso($Curso);
-        
+
         $Carrera->save();
         break;
     case 'nuevo':

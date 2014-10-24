@@ -18,7 +18,7 @@
         <h1 class="title">Altas bajas y modificaciones a <?php print $view->tabla ?></h1>
         <div id="popupbox"></div>
         <div id="content">
-            <?php include_once ($view->contentTemplate); // incluyo el template que corresponda ?>
+			<?php include_once ($view->contentTemplate); // incluyo el template que corresponda ?>
         </div>
 
 		<table>
