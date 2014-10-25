@@ -8,7 +8,7 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
-$view->tabla="Módulos";
+$view->tabla="Modulos";
 $view->label='Nuevo Módulo';
 
 
@@ -19,7 +19,7 @@ switch ($action)
     case 'modulo':
 		$view->modulo=Modulo::getModulos(); // trae todos los horarios
         $view->contentTemplate="templates/modulosGrid.php"; // seteo el template que se va a mostrar
-        break;
+		break;
 	case 'refrescarGrilla':
         $view->disableLayout=true; // no usa el layout
         $view->modulo=Modulo::getModulos();
@@ -33,15 +33,15 @@ switch ($action)
         $Inicio=cleanString($_POST['Inicio']);
         $Fin=cleanString($_POST['Fin']);
 		
-        $Id=new Modulo($Id);
+        $Modulo=new Modulo($Id);
         $Modulo->setIdDia($IdDia);
         $Modulo->setInicio($Inicio);
         $Modulo->setFin($Fin);
 
         $Modulo->save();
-        break;
+		break;
     case 'nuevo':
-        $view->modulo=new Modulo();
+		$view->modulo=new Modulo();
         $view->label='Nuevo Módulo';
         $view->disableLayout=true;
         $view->contentTemplate="templates/moduloForm.php"; // seteo el template que se va a mostrar

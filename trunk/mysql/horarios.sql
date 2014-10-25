@@ -5,10 +5,10 @@ USE `horarios`;
 
 /*Table structure for table `horarios` */
 
-CREATE TABLE `Horarios` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `IdCarrera` int NOT NULL,
-  `IdAsignatura` int NOT NULL,
-  `IdModulo` int NOT NULL,
+CREATE TABLE `horarios` (
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
+  `IdCarrera` int(11) NOT NULL,
+  `IdAsignatura` int(11) NOT NULL,
+  `IdModulo` int(11) NOT NULL,
   PRIMARY KEY (`Id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;

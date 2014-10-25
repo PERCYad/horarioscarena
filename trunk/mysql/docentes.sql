@@ -4,7 +4,7 @@ USE `horarios`;
 
 /*Table structure for table `horarios` */
 
-CREATE TABLE `Docentes` (
+CREATE TABLE `docentes` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Apellidos` varchar(50) NOT NULL,
   `Nombres` varchar(50) NOT NULL,

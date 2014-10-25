@@ -1,7 +1,7 @@
 ﻿<h2><?php echo $view->label ?></h2>
 
 <form name ="docente" id="horario" method="POST" action="docente.php">
-    <input type="hidden" name="id" id="id" value="<?php print $view->docente->getId() ?>">
+    <input type="hidden" name="Id" id="Id" value="<?php print $view->docente->getId() ?>">
     <div>
         <label>Apellidos</label>
         <input type="text" name="Apellidos" id="Apellidos"value = "<?php print $view->docente->getApellidos() ?>">

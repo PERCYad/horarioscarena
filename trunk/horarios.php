@@ -33,7 +33,7 @@ switch ($action)
         $IdAsignatura=intval($_POST['IdAsignatura']);
         $IdModulo=intval($_POST['IdModulo']);
 		
-        $Id=new Horario($Id);
+        $Horario=new Horario($Id);
         $Horario->setIdCarrera($IdCarrera);
         $Horario->setIdAsignatura($IdAsignatura);
         $Horario->setIdModulo($IdModulo);

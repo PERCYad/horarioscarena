@@ -34,7 +34,7 @@ switch ($action)
         $Asignados=intval($_POST['Asignados']);
         $IdDocente=intval($_POST['IdDocente']);
 		
-        $Id=new Asignatura($Id);
+        $Asignatura=new Asignatura($Id);
         $Asignatura->setIdCarrera($IdCarrera);
         $Asignatura->setModulos($Modulos);
         $Asignatura->setAsignados($Asignados);

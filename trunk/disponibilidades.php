@@ -32,7 +32,7 @@ switch ($action)
         $IdDocente=intval($_POST['IdDocente']);
         $IdModulo=intval($_POST['IdModulo']);
 		
-        $Id=new Disponibilidad($Id);
+        $Disponibilidad=new Disponibilidad($Id);
         $Disponibilidad->setIdDocente($IdDocente);
         $Disponibilidad->setModulo($IdModulo);
 
