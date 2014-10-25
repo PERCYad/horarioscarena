@@ -32,14 +32,14 @@ switch ($action)
         $Carrera=cleanString($_POST['Carrera']);
         $Curso=cleanString($_POST['Curso']);
 		
-        $Id=new Carrera($Id);
+        $Carrera=new Carrera($Id);
         $Carrera->setCarrera($Carrera);
         $Carrera->setCurso($Curso);
 
         $Carrera->save();
         break;
     case 'nuevo':
-        $view->carrera=new Carrera();
+		$view->carrera=new Carrera();
         $view->label='Nueva Carrera';
         $view->disableLayout=true;
         $view->contentTemplate="templates/carreraForm.php"; // seteo el template que se va a mostrar

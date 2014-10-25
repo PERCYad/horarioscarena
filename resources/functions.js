@@ -5,10 +5,10 @@
     $('.edit').live('click',function(){
         //this = es el elemento sobre el que se hizo click en este caso el link
         //obtengo el id que guardamos en data-id
-        var id=$(this).attr('data-id');
+        var Id=$(this).attr('data-id');
         //preparo los parametros
         params={};
-        params.id=id;
+        params.Id=Id;
         params.action="editar";
         $('#popupbox').load(document.title + '.php', params,function(){
             $('#block').show();
@@ -18,10 +18,10 @@
 
     $('.delete').live('click',function(){
         //obtengo el id que guardamos en data-id
-        var id=$(this).attr('data-id');
+        var Id=$(this).attr('data-id');
         //preparo los parametros
         params={};
-        params.id=id;
+        params.Id=Id;
         params.action="borrar";
         $('#popupbox').load(document.title + '.php', params,function(){
         $('#content').load(document.title + '.php',{action:"refrescarGrilla"});
@@ -29,7 +29,7 @@
     })
 
     $('#new').live('click',function(){
-		params={};
+		var params={};
         params.action="nuevo";
         $('#popupbox').load(document.title + '.php', params,function(){
             $('#block').show();
@@ -37,7 +37,13 @@
         })
     })
 
-     $('#asignatura').live('submit',function(){
+	$('#salir').live('click',function(){
+        $('#block').hide();
+        $('#popupbox').hide();
+		history.back();
+	})
+	
+    $('#asignatura').live('submit',function(){
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
@@ -141,12 +147,6 @@
         $('#popupbox').hide();
     })
 
-   $('#salir').live('click',function(){
-        $('#block').hide();
-        $('#popupbox').hide();
-		history.back();
-	})
-
-})
+ })
 
 NS={};

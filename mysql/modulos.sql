@@ -3,7 +3,7 @@ USE `horarios`;
 
 /*Table structure for table `horarios` */
 
-CREATE TABLE `Modulos` (
+CREATE TABLE `modulos` (
   `Id` int NOT NULL AUTO_INCREMENT,
   `IdDia` int NOT NULL,
   `Inicio` time NOT NULL,
