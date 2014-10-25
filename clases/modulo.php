@@ -20,7 +20,7 @@ class Modulo
 		if ($nro!=0)
 		{
 			$obj_modulo=new sQuery();
-			$result=$obj_modulo->executeQuery("select * from modulos where Id = $nro"); // ejecuta la consulta para traer al horario 
+			$result=$obj_modulo->executeQuery("select * from modulos where Id=$nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->IdDia=$row['IdDia'];
@@ -58,29 +58,26 @@ class Modulo
 	private function updateModulo()	// actualiza el horario cargado en los atributos
 	{
 			$obj_modulo=new sQuery();
-			$query="update modulos set IdDia='$this->IdDia', Inicio='$this->Inicio', Fin='$this->Fin' where Id = $this->Id";
-			$obj_horario->executeQuery($query); // ejecuta la consulta para traer al horario 
-			return $obj_horario->getAffect(); // retorna todos los registros afectados
-	
+			$query="update modulos set IdDia='$this->IdDia', Inicio='$this->Inicio', Fin='$this->Fin' where Id=$this->Id";
+			$obj_modulo->executeQuery($query); // ejecuta la consulta para traer al horario 
+			return $obj_modulo->getAffect(); // retorna todos los registros afectados
 	}
 
 	private function insertModulo()	// inserta el horario cargado en los atributos
 	{
 			$obj_modulo=new sQuery();
-			$query="insert into modulos( IdDia, Incio, Fin )values('$this->IdDia','$this->Inicio','$this->Fin')";
+			$query="insert into modulos(IdDia, Incio, Fin) values('$this->IdDia','$this->Inicio','$this->Fin')";
 			
 			$obj_modulo->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_modulo->getAffect(); // retorna todos los registros afectados
-	
 	}	
 	
 	function deleteModulo()	// elimina el horario
 	{
 			$obj_modulo=new sQuery();
-			$query="delete from modulo where Id=$this->Id";
+			$query="delete from modulos where Id=$this->Id";
 			$obj_modulo->executeQuery($query); // ejecuta la consulta para  borrar el horario
 			return $obj_modulo->getAffect(); // retorna todos los registros afectados
-	
 	}	
 	
 }

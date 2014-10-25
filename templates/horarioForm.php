@@ -1,4 +1,5 @@
 ﻿<h2><?php echo $view->label ?></h2>
+
 <form name ="horario" id="horario" method="POST" action="horarios.php">
     <input type="hidden" name="Id" id="Id" value="<?php print $view->horario->getId() ?>">
     <div>

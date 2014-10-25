@@ -1,4 +1,5 @@
 ﻿<h2><?php echo $view->label ?></h2>
+
 <form name ="modulo" id="modulo" method="POST" action="modulos.php">
     <input type="hidden" name="Id" id="Id" value="<?php print $view->modulo->getId() ?>">
     <div>

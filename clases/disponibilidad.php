@@ -18,7 +18,7 @@ class Disponibilidad
 		if ($nro!=0)
 		{
 			$obj_disponibilidad=new sQuery();
-			$result=$obj_disponibilidad->executeQuery("select * from disponibilidades where id = $nro"); // ejecuta la consulta para traer al horario 
+			$result=$obj_disponibilidad->executeQuery("select * from disponibilidades where Id=$nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->IdDocente=$row['IdAsignatura'];
@@ -51,7 +51,7 @@ class Disponibilidad
 	private function updateDisponibilidad()	// actualiza el horario cargado en los atributos
 	{
 			$obj_disponibilidad=new sQuery();
-			$query="update disponibilidad set IdDocente='$this->IdDocente', IdModulo='$this->IdModulo'";
+			$query="update disponibilidades set IdDocente='$this->IdDocente', IdModulo='$this->IdModulo'";
 			$obj_disponibilidad->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_disponibilidad->getAffect(); // retorna todos los registros afectados
 	
@@ -60,20 +60,18 @@ class Disponibilidad
 	private function insertDisponibilidad()	// inserta el horario cargado en los atributos
 	{
 			$obj_disponibilidad=new sQuery();
-			$query="insert into disponibilidad ( IdDocente, IdModulo )values('$this->IdDocente', '$this->IdModulo')";
+			$query="insert into disponibilidades (IdDocente, IdModulo) values('$this->IdDocente', '$this->IdModulo')";
 			
 			$obj_disponibilidad->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_disponibilidad->getAffect(); // retorna todos los registros afectados
-	
 	}	
 
 	function deleteDisponibilidad()	// elimina el horario
 	{
 			$obj_disponibilidad=new sQuery();
-			$query="delete from disponibilidad where Id=$this->Id";
+			$query="delete from disponibilidades where Id=$this->Id";
 			$obj_disponibilidad->executeQuery($query); // ejecuta la consulta para  borrar el horario
 			return $obj_disponibilidad->getAffect(); // retorna todos los registros afectados
-	
 	}	
 	
 }

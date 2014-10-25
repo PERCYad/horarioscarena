@@ -32,7 +32,6 @@ class Conexion  // se declara una clase para hacer la conexion con la base de da
 
 class sQuery   // se declara una clase para poder ejecutar las consultas, esta clase llama a la clase anterior
 {
-
 	var $coneccion;
 	var $consulta;
 	var $resultados;
