@@ -45,7 +45,6 @@
 		history.back();
 	})
 
-
     $('#asignatura').live('submit',function(){
 		var params={};
         params.action='grabar';
@@ -78,7 +77,6 @@
         return false;
     })
 
-
     $('#disponibilidad').live('submit',function(){
 		var params={};
         params.action='grabar';
@@ -96,7 +94,6 @@
         return false;
     })
 
-
     $('#docente').live('submit',function(){
 		var params={};
         params.action='grabar';
@@ -112,7 +109,6 @@
         })
         return false;
     })
-
 
     $('#horario').live('submit',function(){
 		var params={};
@@ -130,7 +126,6 @@
         return false;
     })
 
-
     $('#modulo').live('submit',function(){
 		var params={};
         params.action='grabar';
@@ -147,14 +142,12 @@
         return false;
     })
 
-
     // boton cancelar, uso live en lugar de bind para que tome cualquier boton
     // nuevo que pueda aparecer
     $('#cancel').live('click',function(){
         $('#block').hide();
         $('#popupbox').hide();
     })
-
 
 })
 

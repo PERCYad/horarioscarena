@@ -8,7 +8,8 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
-$view->tabla="modulos";
+$view->tabla="Módulos";
+$view->label='Nuevo Módulo';
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
@@ -41,13 +42,13 @@ switch ($action)
         break;
     case 'nuevo':
         $view->modulo=new Modulo();
-        $view->label='Nuevo Horario';
+        $view->label='Nuevo Módulo';
         $view->disableLayout=true;
         $view->contentTemplate="templates/moduloForm.php"; // seteo el template que se va a mostrar
         break;
     case 'editar':
         $editId=intval($_POST['Id']);
-        $view->label='Editar Horario';
+        $view->label='Editar Módulo';
         $view->modulo=new Modulo($editId);
         $view->disableLayout=true;
         $view->contentTemplate="templates/moduloForm.php"; // seteo el template que se va a mostrar

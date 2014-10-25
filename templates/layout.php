@@ -23,7 +23,7 @@
 
 		<table>
 		<tr>
-		<td align="center"><a id="new" class="button" href="javascript:void(0);">Nuevo <?php echo substr($view->tabla, 0,strlen($view->tabla)-1) ?></a></td>
+		<td align="center"><a id="new" class="button" href="javascript:void(0);"><?php echo $view->label ?></a></td>
 		<td align="right"><a id="salir" class="button" href="javascript:void(0);">Salir</a></td>
 		</tr>
 		</table>
