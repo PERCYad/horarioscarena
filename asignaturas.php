@@ -29,10 +29,10 @@ switch ($action)
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $IdCarrera=cleanString($_POST['IdCarrera']);
-        $Modulos=cleanString($_POST['Modulos']);
-        $Asignados=cleanString($_POST['Asignados']);
-        $IdDocente=cleanString($_POST['IdDocente']);
+        $IdCarrera=intval($_POST['IdCarrera']);
+        $Modulos=intval($_POST['Modulos']);
+        $Asignados=intval($_POST['Asignados']);
+        $IdDocente=intval($_POST['IdDocente']);
 		
         $Id=new Asignatura($Id);
         $Asignatura->setIdCarrera($IdCarrera);
