@@ -8,7 +8,8 @@ if(isset($_POST['action']))
 //cambiar horario por docente 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
-$view->tabla='docentes';
+$view->tabla='Docentes';
+$view->label='Nuevo Docente';
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea

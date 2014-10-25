@@ -8,7 +8,8 @@ if(isset($_POST['action']))
 
 $view = new stdClass(); // creo una clase standard para contener la vista
 $view->disableLayout = false;// marca si usa o no el layout , si no lo usa imprime directamente el template
-$view->tabla='disponibilidades';
+$view->tabla='Disponibilidades';
+$view->label='Nueva disponibilidad';
 
 
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
