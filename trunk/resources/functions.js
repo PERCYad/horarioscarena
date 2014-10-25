@@ -14,7 +14,6 @@
             $('#block').show();
             $('#popupbox').show();
         })
-
     })
 
     $('.delete').live('click',function(){
@@ -27,7 +26,6 @@
         $('#popupbox').load(document.title + '.php', params,function(){
         $('#content').load(document.title + '.php',{action:"refrescarGrilla"});
         })
-
     })
 
     $('#new').live('click',function(){
@@ -39,13 +37,7 @@
         })
     })
 
-    $('#salir').live('click',function(){
-        $('#block').hide();
-        $('#popupbox').hide();
-		history.back();
-	})
-
-    $('#asignatura').live('submit',function(){
+     $('#asignatura').live('submit',function(){
 		var params={};
         params.action='grabar';
         params.Id=$('#Id').val();
@@ -148,6 +140,12 @@
         $('#block').hide();
         $('#popupbox').hide();
     })
+
+   $('#salir').live('click',function(){
+        $('#block').hide();
+        $('#popupbox').hide();
+		history.back();
+	})
 
 })
 

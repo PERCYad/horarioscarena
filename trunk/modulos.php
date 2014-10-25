@@ -30,8 +30,8 @@ switch ($action)
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
         $IdDia=intval($_POST['IdDia']);
-        $IdInicio=cleanString($_POST['Inicio']);
-        $IdFin=cleanString($_POST['Fin']);
+        $Inicio=cleanString($_POST['Inicio']);
+        $Fin=cleanString($_POST['Fin']);
 		
         $Id=new Modulo($Id);
         $Modulo->setIdDia($IdDia);
@@ -55,6 +55,7 @@ switch ($action)
         break;
     case 'borrar':
         $Id=intval($_POST['Id']);
+        $view->label='Eliminar Módulo';
         $modulo=new Modulo($Id);
         $modulo->deleteModulo();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.

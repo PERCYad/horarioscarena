@@ -29,8 +29,8 @@ switch ($action)
  		// limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $Carrera=intval($_POST['Carrera']);
-        $Curso=intval($_POST['Curso']);
+        $Carrera=cleanString($_POST['Carrera']);
+        $Curso=cleanString($_POST['Curso']);
 		
         $Id=new Carrera($Id);
         $Carrera->setCarrera($Carrera);

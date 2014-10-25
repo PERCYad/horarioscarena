@@ -29,8 +29,8 @@ switch ($action)
         // limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
         $Id=intval($_POST['Id']);
-        $IdDocente=cleanString($_POST['IdDocente']);
-        $IdModulo=cleanString($_POST['IdModulo']);
+        $IdDocente=intval($_POST['IdDocente']);
+        $IdModulo=intval($_POST['IdModulo']);
 		
         $Id=new Disponibilidad($Id);
         $Disponibilidad->setIdDocente($IdDocente);
