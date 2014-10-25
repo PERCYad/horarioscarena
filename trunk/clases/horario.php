@@ -20,7 +20,7 @@ class Horario
 		if ($nro!=0)
 		{
 			$obj_horario=new sQuery();
-			$result=$obj_horario->executeQuery("select * from horarios where id = $nro"); // ejecuta la consulta para traer al horario 
+			$result=$obj_horario->executeQuery("select * from horarios where Id=$nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->IdCarrera=$row['IdCarrera'];
@@ -56,10 +56,9 @@ class Horario
 	private function updateHorario()	// actualiza el horario cargado en los atributos
 	{
 			$obj_horario=new sQuery();
-			$query="update horarios set IdCarrera='$this->IdCarrera', IdAsignatura='$this->IdAsignatura', IdModulo='$this->IdModulo' where Id = $this->Id";
+			$query="update horarios set IdCarrera='$this->IdCarrera', IdAsignatura='$this->IdAsignatura', IdModulo='$this->IdModulo' where Id=$this->Id";
 			$obj_horario->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
-	
 	}
 
 	private function insertHorario()	// inserta el horario cargado en los atributos
@@ -68,7 +67,6 @@ class Horario
 			$query="insert into horarios( IdCarrera, IdAsignatura, IdModulo )values('$this->IdCarrera', '$this->IdAsignatura', '$this->IdModulo')";
 			$obj_horario->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
-	
 	}	
 	
 	function deleteHorario()	// elimina el horario
@@ -77,7 +75,6 @@ class Horario
 			$query="delete from horarios where Id=$this->Id";
 			$obj_horario->executeQuery($query); // ejecuta la consulta para  borrar el horario
 			return $obj_horario->getAffect(); // retorna todos los registros afectados
-	
 	}	
 	
 }

@@ -20,7 +20,7 @@ class asignatura
 		if ($nro!=0)
 		{
 			$obj_asignatura=new sQuery();
-			$result=$obj_asignatura->executeQuery("select * from asignaturas where id = $nro"); // ejecuta la consulta para traer a asignatura 
+			$result=$obj_asignatura->executeQuery("select * from asignaturas where Id=$nro"); // ejecuta la consulta para traer a asignatura 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->IdCarrera=$row['IdCarrera'];
@@ -64,27 +64,26 @@ class asignatura
 	private function updateAsignatura()	// actualiza asignatura cargado en los atributos
 	{
 			$obj_asignatura=new sQuery();
-			$query="update asignaturas set IdCarrera='$this->IdCarrera', ModuloS='$this->ModuloS', asinados='$this->Asignados', IdDocente='$this->IdDocente' where Id = $this->Id";
+			$query="update asignaturas set IdCarrera='$this->IdCarrera', Modulos='$this->Modulos', Asignados='$this->Asignados', IdDocente='$this->IdDocente' where Id=$this->Id";
 			$obj_asignatura->executeQuery($query); // ejecuta la consulta para traer a asignatura 
 			return $obj_asignatura->getAffect(); // retorna todos los registros afectados
-	
 	}
+
 	private function insertAsignatura()	// inserta asignatura cargado en los atributos
 	{
 			$obj_asignatura=new sQuery();
-			$query="insert into asignaturas( IdCarrera, Modulos, Asignados, IdDocente )values('$this->IdCarrera', '$this->Modulos','$this->Asignados','$this->IdDocente')";
+			$query="insert into asignaturas(IdCarrera, Modulos, Asignados, IdDocente) values('$this->IdCarrera', '$this->Modulos','$this->Asignados','$this->IdDocente')";
 			
 			$obj_asignatura->executeQuery($query); // ejecuta la consulta para traer a asignatura 
 			return $obj_asignatura->getAffect(); // retorna todos los registros afectados
-	
 	}	
+
 	function deleteAsignatura()	// elimina el asignatura
 	{
 			$obj_asignatura=new sQuery();
 			$query="delete from asignaturas where Id=$this->Id";
 			$obj_asignatura->executeQuery($query); // ejecuta la consulta para  borrar asignatura
 			return $obj_asignatura->getAffect(); // retorna todos los registros afectados
-	
 	}	
 	
 }

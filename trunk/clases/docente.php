@@ -19,7 +19,7 @@ class Docente
 		if ($nro!=0)
 		{
 			$obj_docente=new sQuery();
-			$result=$obj_docente->executeQuery("select * from docentes where id = $nro"); // ejecuta la consulta para traer al horario 
+			$result=$obj_docente->executeQuery("select * from docentes where Id=$nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->Apellidos=$row['Apellidos'];
@@ -57,11 +57,11 @@ class Docente
 	private function updateDocente()	// actualiza el horario cargado en los atributos
 	{
 			$obj_docente=new sQuery();
-			$query="update docentes set Apellidos='$this->Apellidos', Nombre='$this->Nombres', Correo='$this->Correo' where Id = $this->Id";
+			$query="update docentes set Apellidos='$this->Apellidos', Nombre='$this->Nombres', Correo='$this->Correo' where Id=$this->Id";
 			$obj_docente->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_docente->getAffect(); // retorna todos los registros afectados
-	
 	}
+
 	private function insertDocente()	// inserta el horario cargado en los atributos
 	{
 			$obj_docente=new sQuery();
@@ -69,15 +69,14 @@ class Docente
 			
 			$obj_docente->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_docente->getAffect(); // retorna todos los registros afectados
-	
 	}	
+
 	function deleteDocente()	// elimina el horario
 	{
 			$obj_docente=new sQuery();
 			$query="delete from docentes where Id=$this->Id";
 			$obj_docente->executeQuery($query); // ejecuta la consulta para  borrar el horario
 			return $obj_docente->getAffect(); // retorna todos los registros afectados
-	
 	}	
 	
 }

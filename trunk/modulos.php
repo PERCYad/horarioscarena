@@ -56,7 +56,7 @@ switch ($action)
     case 'borrar':
         $Id=intval($_POST['Id']);
         $modulo=new Modulo($Id);
-        $modulo->deleteModulos();
+        $modulo->deleteModulo();
         die; // no quiero mostrar nada cuando borra , solo devuelve el control.
         break;
     default :

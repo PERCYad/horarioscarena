@@ -19,7 +19,7 @@ class Carrera
 		if ($nro!=0)
 		{
 			$obj_carrera=new sQuery();
-			$result=$obj_carrera->executeQuery("select * from carreras where id = $nro"); // ejecuta la consulta para traer al horario 
+			$result=$obj_carrera->executeQuery("select * from carreras where Id=$nro"); // ejecuta la consulta para traer al horario 
 			$row=mysql_fetch_array($result);
 			$this->Id=$row['Id'];
 			$this->Carrera=$row['Carrera'];
@@ -52,7 +52,7 @@ class Carrera
 	private function updateCarrera()	// actualiza el horario cargado en los atributos
 	{
 			$obj_carrera=new sQuery();
-			$query="update carreras set Carrera='$this->Carrera', Curso='$this->Curso' where Id = $this->Id";
+			$query="update carreras set Carrera='$this->Carrera', Curso='$this->Curso' where Id=$this->Id";
 			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	}
@@ -60,7 +60,7 @@ class Carrera
 	private function insertCarrera()	// inserta el horario cargado en los atributos
 	{
 			$obj_carrera=new sQuery();
-			$query="insert into carreras( Carrera, Curso )values('$this->Carrera', '$this->Curso')";
+			$query="insert into carreras(Carrera, Curso) values('$this->Carrera', '$this->Curso')";
 			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
 			return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	}	
@@ -68,7 +68,7 @@ class Carrera
 	function deleteCarrera()	// elimina el horario
 	{
 			$obj_carrera=new sQuery();
-			$query="delete from carreras where Id = $this->Id";
+			$query="delete from carreras where Id=$this->Id";
 			$obj_carrera->executeQuery($query); // ejecuta la consulta para  borrar el horario
 			return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	}	
