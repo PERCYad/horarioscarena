@@ -28,7 +28,7 @@ switch ($action)
     case 'grabar':
  		// limpio todos los valores antes de guardarlos
         // por ls dudas venga algo raro
-        $Id=intval($_POST['Id']);
+		$Id=intval($_POST['Id']);
         $Carrera=cleanString($_POST['Carrera']);
         $Curso=cleanString($_POST['Curso']);
 		

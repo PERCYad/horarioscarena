@@ -24,10 +24,12 @@
         </div>
 
 		<table>
+		<thead>
 		<tr>
-		<td align="center"><a id="new" class="button" href="javascript:void(0);"><?php echo $view->label ?></a></td>
-		<td align="right"><a id="salir" class="button" href="javascript:void(0);">Salir</a></td>
+		<th align="center"><a id="new" class="button" href="javascript:void(0);"><?php echo $view->label ?></a></th>
+		<th align="right"><a id="salir" class="button" href="javascript:void(0);">Salir</a></th>
 		</tr>
+		</thead>
 		</table>
 
     </div>

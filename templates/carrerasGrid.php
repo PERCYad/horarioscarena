@@ -18,5 +18,5 @@
                 <td><a class="delete" href="javascript:void(0);" data-id="<?php echo $carrera['Id'];?>">Borrar</a></td>
             </tr>
         <?php endforeach; ?>
-    </tbody>
+	</tbody>
 </table>

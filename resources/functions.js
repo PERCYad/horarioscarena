@@ -71,7 +71,7 @@
             $('#block').hide();
             $('#popupbox').hide();
             $('#content').load('carreras.php',{action:"refrescarGrilla"});
-        })
+		})
         return false;
     })
 
