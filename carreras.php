@@ -1,7 +1,12 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
+<<<<<<< .mine
+include_once ("clases/carrera.php");
+$action='carreras';
+=======
 include_once ("clases/carrera.php");
 $action='carrera';
+>>>>>>> .r79
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
@@ -20,7 +25,11 @@ switch ($action)
 		$view->carrera=Carrera::getCarreras(); // trae todos los horarios
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
         break;
+<<<<<<< .mine
+    case 'refrescarGrilla':
+=======
 	case 'refrescarGrilla':
+>>>>>>> .r79
         $view->disableLayout=true; // no usa el layout
         $view->carrera=Carrera::getCarreras();
         $view->contentTemplate="templates/carrerasGrid.php"; // seteo el template que se va a mostrar
