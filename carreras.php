@@ -1,7 +1,7 @@
 ﻿<?php
 include_once ("clases/clase.php");// incluyo las clases a ser usadas
 include_once ("clases/carrera.php");
-$action='carreras';
+$action='carrera';
 if(isset($_POST['action']))
 {$action=$_POST['action'];}
 
