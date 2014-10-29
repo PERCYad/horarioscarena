@@ -11,7 +11,6 @@ $view->disableLayout = false;// marca si usa o no el layout , si no lo usa impri
 $view->tabla="Carreras";
 $view->label='Nueva Carrera';
 
-
 // para no utilizar un framework y simplificar las cosas uso este switch, la idea
 // es que puedan apreciar facilmente cuales son las operaciones que se realizan
 switch ($action)
@@ -36,7 +35,8 @@ switch ($action)
         $Carrera->setCarrera($Carrera);
         $Carrera->setCurso($Curso);
 
-        $Carrera->save();
+		$Carrera->save();
+
         break;
     case 'nuevo':
 		$view->carrera=new Carrera();

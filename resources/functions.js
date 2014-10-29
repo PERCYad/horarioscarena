@@ -29,7 +29,7 @@
     })
 
     $('#new').live('click',function(){
-		var params={};
+		params={};
         params.action="nuevo";
         $('#popupbox').load(document.title + '.php', params,function(){
             $('#block').show();
@@ -68,7 +68,7 @@
         params.Curso=$('#Curso').val();
 
         $.post('carreras.php',params,function(){
-            $('#block').hide();
+			$('#block').hide();
             $('#popupbox').hide();
             $('#content').load('carreras.php',{action:"refrescarGrilla"});
 		})
