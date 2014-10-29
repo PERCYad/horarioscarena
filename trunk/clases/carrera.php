@@ -47,30 +47,30 @@ class Carrera
         {$this->updateCarrera();}
         else
         {$this->insertCarrera();}
-    }
+	}
 	
 	private function updateCarrera()	// actualiza el horario cargado en los atributos
 	{
-			$obj_carrera=new sQuery();
-			$query="update carreras set Carrera='$this->Carrera', Curso='$this->Curso' where Id=$this->Id";
-			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
-			return $obj_carrera->getAffect(); // retorna todos los registros afectados
+		$obj_carrera=new sQuery();
+		$query="update carreras set Carrera='$this->Carrera', Curso='$this->Curso' where Id=$this->Id";
+		$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
+		return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	}
 
 	private function insertCarrera()	// inserta el horario cargado en los atributos
 	{
-			$obj_carrera=new sQuery();
-			$query="insert into carreras(Carrera, Curso) values('$this->Carrera', '$this->Curso')";
-			$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
-			return $obj_carrera->getAffect(); // retorna todos los registros afectados
+		$obj_carrera=new sQuery();
+		$query="insert into carreras(Carrera, Curso) values('$this->Carrera', '$this->Curso')";
+		$obj_carrera->executeQuery($query); // ejecuta la consulta para traer al horario 
+		return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	}	
 	
 	function deleteCarrera()	// elimina el horario
 	{
-			$obj_carrera=new sQuery();
-			$query="delete from carreras where Id=$this->Id";
-			$obj_carrera->executeQuery($query); // ejecuta la consulta para  borrar el horario
-			return $obj_carrera->getAffect(); // retorna todos los registros afectados
+		$obj_carrera=new sQuery();
+		$query="delete from carreras where Id=$this->Id";
+		$obj_carrera->executeQuery($query); // ejecuta la consulta para  borrar el horario
+		return $obj_carrera->getAffect(); // retorna todos los registros afectados
 	}	
 	
 }

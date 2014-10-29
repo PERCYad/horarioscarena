@@ -4,7 +4,7 @@
     <input type="hidden" name="Id" id="Id" value="<?php print $view->disponibilidad->getId() ?>">
     <div>
         <label>IdDocente</label>
-        <input type="text" name="IdDocente" id="IdDocente" value = "<?php print $view->disponibilidad->getIdDocente() ?>">
+        <input type="text" name="IdDocente" id="IdDocente" value = "<?php print $view->disponibilidad->getIdDocente() ?>" autofocus>
     </div>
     <div>
         <label>IdModulo</label>

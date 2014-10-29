@@ -4,7 +4,7 @@
     <input type="hidden" name="Id" id="Id" value="<?php print $view->modulo->getId() ?>">
     <div>
         <label>IdDia</label>
-        <input type="text" name="IdDia" id="IdDia"value = "<?php print $view->modulo->getIdDia() ?>">
+        <input type="text" name="IdDia" id="IdDia"value = "<?php print $view->modulo->getIdDia() ?>" autofocus>
     </div>
         <label>Inicio</label>
         <input type="text" name="Inicio" id="Inicio" value = "<?php print $view->modulo->getInicio() ?>">
