@@ -1,0 +1,1 @@
+Generador horarios de clase, mantenimiento de carreras, materias, docentes, módulos y disponibilidad.
